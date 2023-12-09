@@ -25,6 +25,15 @@ export const Checklist = ({title, children}: ChecklistProps) => {
     const currentPhase = phases[index]
     const nextPhase = hasNext ? phases[index+1] : null
 
+    let altPhase: PhaseElem | null = null
+    let altIndex = -1
+    if (currentPhase.props.alternate) {
+        altIndex = phases.findIndex(phase => phase.props.name === currentPhase.props.alternate)
+        if (altIndex > -1) {
+            altPhase = phases[altIndex]
+        }
+    }
+
     const prev = () => {
         const newIndex = index - 1
         if (newIndex >= 0) {
@@ -39,14 +48,19 @@ export const Checklist = ({title, children}: ChecklistProps) => {
         }
     }
 
+    const alt = () => {
+        setIndex(altIndex)
+    }
+
     return <div className={styles.checklist}>
         <h1>{title}</h1>
         <div className={styles.phaseContainer}>
             {currentPhase}
         </div>
         <div className={styles.navButtons}>
-            <button className={styles.navButton} onClick={prev} disabled={!hasPrev}>{previousPhase?.props.name || '-Start-'}</button>
-            <button className={styles.navButton} onClick={next} disabled={!hasNext}>{nextPhase?.props.name || '-Finish-'}</button>
+            <button onClick={prev} disabled={!hasPrev}>{previousPhase?.props.name || '-Start-'}</button>
+            {altPhase && <button onClick={alt}>{altPhase.props.name}</button>}
+            <button onClick={next} disabled={!hasNext}>{nextPhase?.props.name || '-Finish-'}</button>
         </div>
     </div>
 }

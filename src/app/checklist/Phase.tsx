@@ -4,6 +4,7 @@ import {CheckProps} from "@/app/checklist/Check";
 
 export interface PhaseProps extends PropsWithChildren{
     name: string
+    alternate?: string
 }
 
 type CheckElem = ReactElement<CheckProps>

@@ -156,7 +156,7 @@ export const PegDayChecklist = () => (
             <Check item={'Flaps'} confirm={'set'}/>
         </Phase>
 
-        <Phase name={'Short final'}>
+        <Phase name={'Short final'} alternate={'Take-off'}>
             <Check item={'Carburator heat'} confirm={'off'}/>
         </Phase>
 

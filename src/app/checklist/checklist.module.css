@@ -33,9 +33,10 @@
     display: flex;
     gap: 15px;
     min-height: 50px;
+    justify-content: stretch;
 }
 
-.navButton {
+.navButtons button {
     flex: 1;
 }
 
