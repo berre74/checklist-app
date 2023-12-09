@@ -17,6 +17,11 @@
     gap: 15px;
 }
 
+.phase h2 {
+    display: flex;
+    justify-content: space-between;
+}
+
 .checks {
     flex: 1;
     display: flex;

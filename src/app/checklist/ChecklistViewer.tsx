@@ -49,7 +49,7 @@ export const ChecklistViewer = ({checklist}: ChecklistProps) => {
     return <div className={styles.checklist}>
         <h1>{checklist.name}</h1>
         <div className={styles.phase}>
-            <h2>{currentPhase.name}</h2>
+            <h2><div>{currentPhase.name}</div><div>{index+1}/{phases.length}</div></h2>
             <div className={styles.checks}>
                 {currentPhase.checks.map((check, index) => (<CheckView key={index} check={check} />))}
             </div>
