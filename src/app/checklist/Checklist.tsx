@@ -8,11 +8,11 @@ interface ChecklistProps extends PropsWithChildren {
 
 type PhaseElem = ReactElement<PhaseProps>
 
-const isPhase = (reactElem : any) : reactElem is PhaseElem => {
+const isPhase = (reactElem: any): reactElem is PhaseElem => {
     return isValidElement<PhaseProps>(reactElem)
 }
 
-export const Checklist = ({title, children} : ChecklistProps) => {
+export const Checklist = ({title, children}: ChecklistProps) => {
     // Why does this have to be so hard ?
     const phases = Children.toArray(children).filter<PhaseElem>(isPhase)
 
@@ -21,7 +21,7 @@ export const Checklist = ({title, children} : ChecklistProps) => {
     const phase = phases[index]
 
     const prev = () => {
-        const newIndex = index -1
+        const newIndex = index - 1
         if (newIndex >= 0) {
             setIndex(newIndex)
         }
@@ -36,8 +36,12 @@ export const Checklist = ({title, children} : ChecklistProps) => {
 
     return <div className={styles.checklist}>
         <h1>{title}</h1>
-        {phase}
-        <button onClick={prev}>Prev</button>
-        <button onClick={next}>Next</button>
+        <div className={styles.phaseContainer}>
+            {phase}
+        </div>
+        <div className={styles.navButtons}>
+            <button className={styles.navButton} onClick={prev}>Prev</button>
+            <button className={styles.navButton} onClick={next}>Next</button>
+        </div>
     </div>
 }

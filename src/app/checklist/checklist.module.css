@@ -1,9 +1,49 @@
 .checklist {
     /* width: 300px; */
+    height: 100%;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.checklist h1 {
+    text-align: center;
+}
+
+.phaseContainer {
+    flex: 1;
+}
+
+.phase {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.checksContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.navButtons {
+    display: flex;
+    gap: 15px;
+    min-height: 50px;
+}
+
+.navButton {
+    flex: 1;
 }
 
 .check {
     display: flex;
     justify-content: space-between;
+}
+
+.confirm {
+    font-style: italic;
 }

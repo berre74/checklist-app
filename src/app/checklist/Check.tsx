@@ -1,6 +1,6 @@
 import styles from './checklist.module.css'
 
-interface CheckProps {
+export interface CheckProps {
     item: string
     confirm: string
 }
@@ -8,6 +8,6 @@ interface CheckProps {
 export const Check = ({item, confirm} : CheckProps) => {
     return <div className={styles.check}>
         <div>{item}</div>
-        <div>{confirm}</div>
+        <div className={styles.confirm}>{confirm}</div>
     </div>
 }
