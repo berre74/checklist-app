@@ -1,7 +1,8 @@
 'use client'
 
-import {PegChecklist} from "@/app/PegChecklist";
+import {ChecklistViewer} from "@/app/checklist/ChecklistViewer";
+import {pegChecklist} from "@/app/checklist/pegChecklist";
 
 export default function Home() {
-  return <PegChecklist />
+  return <ChecklistViewer checklist={pegChecklist} />
 }
