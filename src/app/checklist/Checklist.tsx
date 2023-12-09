@@ -18,7 +18,12 @@ export const Checklist = ({title, children}: ChecklistProps) => {
 
     const [index, setIndex] = useState(0)
 
-    const phase = phases[index]
+    const hasPrev = index > 0
+    const hasNext = index < phases.length-1
+
+    const previousPhase = hasPrev ? phases[index-1] : null
+    const currentPhase = phases[index]
+    const nextPhase = hasNext ? phases[index+1] : null
 
     const prev = () => {
         const newIndex = index - 1
@@ -37,11 +42,11 @@ export const Checklist = ({title, children}: ChecklistProps) => {
     return <div className={styles.checklist}>
         <h1>{title}</h1>
         <div className={styles.phaseContainer}>
-            {phase}
+            {currentPhase}
         </div>
         <div className={styles.navButtons}>
-            <button className={styles.navButton} onClick={prev}>Prev</button>
-            <button className={styles.navButton} onClick={next}>Next</button>
+            <button className={styles.navButton} onClick={prev} disabled={!hasPrev}>{previousPhase?.props.name || '-Start-'}</button>
+            <button className={styles.navButton} onClick={next} disabled={!hasNext}>{nextPhase?.props.name || '-Finish-'}</button>
         </div>
     </div>
 }

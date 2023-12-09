@@ -1,6 +1,6 @@
 import styles from './checklist.module.css'
 import {isValidElement, PropsWithChildren, ReactElement} from "react";
-import {Check, CheckProps} from "@/app/checklist/Check";
+import {CheckProps} from "@/app/checklist/Check";
 
 export interface PhaseProps extends PropsWithChildren{
     name: string
