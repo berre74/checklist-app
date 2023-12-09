@@ -1,0 +1,9 @@
+.checklist {
+    /* width: 300px; */
+    padding: 15px;
+}
+
+.check {
+    display: flex;
+    justify-content: space-between;
+}
