@@ -1,8 +1,10 @@
 import styles from './checklist.module.css'
+import {FlightCondition} from "@/app/checklist/checklist-support";
 
 export interface CheckProps {
     item: string
     confirm: string
+    conditions?: FlightCondition[]
 }
 
 export const Check = ({item, confirm} : CheckProps) => {

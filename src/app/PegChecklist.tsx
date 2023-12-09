@@ -2,8 +2,8 @@ import {Phase} from "@/app/checklist/Phase";
 import {Check} from "@/app/checklist/Check";
 import {Checklist} from "@/app/checklist/Checklist";
 
-export const PegDayChecklist = () => (
-    <Checklist title={'OO-PEG Day'}>
+export const PegChecklist = () => (
+    <Checklist title={'OO-PEG'}>
 
         <Phase name={'Before start'}>
             <Check item={'Documents'} confirm={'on-board & checked'}/>

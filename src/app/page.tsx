@@ -1,7 +1,7 @@
 'use client'
 
-import {PegDayChecklist} from "@/app/PegDayChecklist";
+import {PegChecklist} from "@/app/PegChecklist";
 
 export default function Home() {
-  return <PegDayChecklist />
+  return <PegChecklist />
 }
