@@ -14,10 +14,6 @@
     flex: 1
 }
 
-.header button {
-    width: 5ch;
-}
-
 .phase {
     flex: 1;
     display: flex;
@@ -33,10 +29,8 @@
     gap: 5px;
 }
 
-.phaseSelection button {
-    min-height: 30px;
-    text-align: left;
-    padding: 5px;
+.phaseSelectionButton {
+    justify-content: left;
 }
 
 .phaseTitleBar {

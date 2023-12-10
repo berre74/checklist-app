@@ -1,8 +1,11 @@
 import styles from './checklist.module.css'
-import {useState} from "react";
-import {Checklist, FlightCondition, Phase} from "@/app/checklist/checklist-support";
-import {CheckView} from "@/app/checklist/CheckView";
-import { Button } from '@mui/material';
+import {useState} from "react"
+import {Checklist, FlightCondition, Phase} from "@/app/checklist/checklist-support"
+import {CheckView} from "@/app/checklist/CheckView"
+import {Button, IconButton} from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import ModeNightIcon from '@mui/icons-material/ModeNight'
 
 interface ChecklistProps {
     checklist: Checklist
@@ -68,12 +71,12 @@ export const ChecklistViewer = ({checklist}: ChecklistProps) => {
 
     return <div className={styles.checklist}>
         <div className={styles.header}>
-            <Button onClick={togglePhaseSelection} variant={'text'} size={'small'}>Q</Button>
+            <IconButton onClick={togglePhaseSelection} ><MenuIcon /></IconButton>
             <h3 className={styles.title}>{checklist.name}</h3>
-            <Button onClick={toggleCondition} variant={'text'} size={'small'}>{condition}</Button>
+            <IconButton onClick={toggleCondition}>{condition === 'day' ? <LightModeIcon /> : <ModeNightIcon />}</IconButton>
         </div>
         {showPhaseSelection && <div className={styles.phaseSelection}>
-            {phases.map((p, i) => <Button key={i} onClick={() => goTo(i)}  >{p.name}</Button>)}
+            {phases.map((p, i) => <Button key={i} onClick={() => goTo(i)} className={styles.phaseSelectionButton} >{p.name}</Button>)}
         </div>}
         {!showPhaseSelection &&
             <>
@@ -89,8 +92,8 @@ export const ChecklistViewer = ({checklist}: ChecklistProps) => {
                 </div>
             </div>
                 <div className={styles.navButtons}>
-                    <Button onClick={prev} disabled={!hasPrev} variant={'contained'}>{previousPhase?.name || '-Start-'}</Button>
-                    {altPhase && <Button onClick={alt} variant={'contained'}>{altPhase.name}</Button>}
+                    <Button onClick={prev} disabled={!hasPrev} variant={'contained'} color={'secondary'}>{previousPhase?.name || '-Start-'}</Button>
+                    {altPhase && <Button onClick={alt} variant={'contained'} color={'info'}>{altPhase.name}</Button>}
                     <Button onClick={next} disabled={!hasNext} variant={'contained'}>{nextPhase?.name || '-Finish-'}</Button>
                 </div>
             </>
