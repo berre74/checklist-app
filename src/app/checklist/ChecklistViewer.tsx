@@ -1,6 +1,6 @@
 import styles from './checklist.module.css'
 import {useState} from "react";
-import {Checklist, Phase} from "@/app/checklist/checklist-support";
+import {Checklist, FlightCondition, Phase} from "@/app/checklist/checklist-support";
 import {CheckView} from "@/app/checklist/CheckView";
 
 interface ChecklistProps {
@@ -11,6 +11,8 @@ export const ChecklistViewer = ({checklist}: ChecklistProps) => {
     const phases = checklist.phases
 
     const [index, setIndex] = useState(0)
+    const [condition, setCondition] = useState<FlightCondition>('day')
+    const [showPhaseSelection, setShowPhaseSelection] = useState(false)
 
     const hasPrev = index > 0
     const hasNext = index < phases.length - 1
@@ -26,6 +28,23 @@ export const ChecklistViewer = ({checklist}: ChecklistProps) => {
         if (altIndex > -1) {
             altPhase = phases[altIndex]
         }
+    }
+
+    const togglePhaseSelection = () => {
+        setShowPhaseSelection(!showPhaseSelection)
+    }
+
+    const toggleCondition = () => {
+        if (condition === 'day') {
+            setCondition('night')
+        } else {
+            setCondition('day')
+        }
+    }
+
+    const goTo = (target: number) => {
+        setIndex(target)
+        setShowPhaseSelection(false)
     }
 
     const prev = () => {
@@ -47,17 +66,34 @@ export const ChecklistViewer = ({checklist}: ChecklistProps) => {
     }
 
     return <div className={styles.checklist}>
-        <h1>{checklist.name}</h1>
-        <div className={styles.phase}>
-            <h2><div>{currentPhase.name}</div><div>{index+1}/{phases.length}</div></h2>
-            <div className={styles.checks}>
-                {currentPhase.checks.map((check, index) => (<CheckView key={index} check={check} />))}
+        <div className={styles.header}>
+            <button onClick={togglePhaseSelection}>Q</button>
+            <h1>{checklist.name}</h1>
+            <button onClick={toggleCondition}>{condition}</button>
+        </div>
+        {showPhaseSelection && <div className={styles.phaseSelection}>
+            {phases.map((p, i) => <button onClick={() => goTo(i)}>{p.name}</button>)}
+        </div>}
+        {!showPhaseSelection &&
+            <>
+            <div className={styles.phase}>
+                <div className={styles.phaseTitleBar}>
+                    <h2>{currentPhase.name}</h2>
+                    <div>{index + 1}/{phases.length}</div>
+                </div>
+                <div className={styles.checks}>
+                    {currentPhase.checks
+                        .filter(check => check.conditions.includes(condition))
+                        .map((check, index) => (<CheckView key={index} check={check}/>))}
+                </div>
             </div>
-        </div>
-        <div className={styles.navButtons}>
-            <button onClick={prev} disabled={!hasPrev}>{previousPhase?.name || '-Start-'}</button>
-            {altPhase && <button onClick={alt}>{altPhase.name}</button>}
-            <button onClick={next} disabled={!hasNext}>{nextPhase?.name || '-Finish-'}</button>
-        </div>
+                <div className={styles.navButtons}>
+                    <button onClick={prev} disabled={!hasPrev}>{previousPhase?.name || '-Start-'}</button>
+                    {altPhase && <button onClick={alt}>{altPhase.name}</button>}
+                    <button onClick={next} disabled={!hasNext}>{nextPhase?.name || '-Finish-'}</button>
+                </div>
+            </>
+        }
     </div>
+
 }

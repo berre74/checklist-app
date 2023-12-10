@@ -4,8 +4,65 @@ export const pegChecklist: Checklist = {
     name: 'OO-PEG',
     phases: [
         {
+            name: 'Preflight - interior',
+            checks: [
+                check('POH and documents', 'on board & checked'),
+                check('Online trouble report', 'checked'),
+                check('Fire extinguisher & First aid kit', 'on board'),
+                check('Ignition', 'off & key removed'),
+                check('Master switch', 'on'),
+                check('Annunciator panel', 'checked'),
+                check('Fuel quantity', 'checked'),
+                check('Interior lights', 'checked'),
+                check('All lights', 'on'),
+                check('Pitot heat', 'on'),
+                check('Lights', 'checked'),
+                check('Stall warning', 'checked'),
+                check('Pitot', 'warm'),
+                check('Electrical switches', 'off'),
+                check('Master switch', 'off'),
+                check('Parking brake', 'set'),
+                check('Pitot & static system', 'drained'),
+                check('Flaps', 'down'),
+                check('Trims', 'neutral'),
+                check('Tow bar & chocks', 'removed'),
+                check('Windows', 'clean'),
+                check('Baggage', 'secure'),
+                check('Baggage door', 'closed & locked')
+            ]
+        },
+        {
+            name: 'Preflight - exterior',
+            checks: [
+                check('Wing surface', 'checked free'),
+                check('Flap & aileron + hinges', 'checked'),
+                check('Static wicks', 'checked'),
+                check('Fuel tank', 'checked & secured'),
+                check('Fuel tank sump', 'drained'),
+                check('Fuel vent', 'clear'), // Where is the fuel vent really ?
+                check('Main gear strut', 'checked'),
+                check('Tire', 'checked'),
+                check('Brakes', 'checked'), // How ?
+                check('Fresh air inlet', 'clear'), // Where ?
+                check('Fuel & oil', 'check for leaks'),
+                check('Cowling', 'secure'),
+                check('Windshield', 'clean'),
+                check('Propeller and spinner', 'check'),
+                check('Air inlets', 'clear'),
+                check('Alternator belt', 'check tension'), // Really ?
+                check('Oil level', 'checked'),
+                check('Fuel strainer', 'drained & checked'),
+                check('Pitot tube', 'checked'),
+                check('Antennas', 'checked'),
+                check('Empennage', 'clear'), // ?
+                check('Fresh air inlet', 'clear'), // Where ?
+                check('Stabilo & trim tab', 'checked')
+            ]
+        },
+        {
             name: 'Before start',
             checks: [
+                check('Flightplan', 'filed', ['night']),
                 check('Documents', 'on-board & checked'),
                 check('Seats & belts', 'adjusted & locked'),
                 check('Doors', 'closed & locked'),
@@ -15,7 +72,7 @@ export const pegChecklist: Checklist = {
                 check('Avionics master switch', 'off'),
                 check('Throttle', 'closed'),
                 check('Mixture', 'full rich'),
-                check('Carburator heat', 'off'),
+                check('Carburetor heat', 'off'),
                 check('Circuit breakers', 'all in'),
                 check('Ignition', 'off & key ready'),
                 check('Fuel selector ', 'lowest tank'),
@@ -33,7 +90,7 @@ export const pegChecklist: Checklist = {
                 check('Brakes', 'set'),
                 check('Electrical fuel pump', 'on'),
                 check('Fin strobe light', 'on'),
-                check('Throtlle', '1 cm open'),
+                check('Throttle', '1 cm open'),
                 check('Primer', 'as required'),
                 check('Propeller area', 'clear'),
                 check('Starter', 'engage'),
@@ -52,7 +109,10 @@ export const pegChecklist: Checklist = {
                 check('PFD instruments', 'checked & set'),
                 check('STBY attitude indicator', 'tested'),
                 check('Trim interrupt & overpower', 'checked'),
-                check('Radios and navaids', 'on & set')
+                check('Radios and navaids', 'on & set'),
+                check('Navigation light', 'on', ['night']),
+                check('Landing light', 'on', ['night']),
+                check('Recognition lights', 'on', ['night']),
             ]
         },
         {
@@ -77,7 +137,7 @@ export const pegChecklist: Checklist = {
                 check('Engine instruments', 'in limits'),
                 check('Heading indicator', 'aligned'),
                 check('Ignition', 'checked 175/50'),
-                check('Carburator heat', 'checked'),
+                check('Carburetor heat', 'checked'),
                 check('Throttle', 'full'),
                 check('STBY alternator', 'checked'),
                 check('Throttle', 'idle, then 1000 rpm')
@@ -95,7 +155,7 @@ export const pegChecklist: Checklist = {
                 check('Fuel selector', 'fullest tank'),
                 check('Ignition', 'both'),
                 check('Mixture', 'full rich'),
-                check('Carburator heat', 'off'),
+                check('Carburetor heat', 'off'),
                 check('Flaps', 'set'),
                 check('Trims', 'set'),
                 check('Departure briefing', 'reviewed')
@@ -130,7 +190,7 @@ export const pegChecklist: Checklist = {
             name: 'Take-off',
             checks: [
                 check('Engine parameters', 'checked'),
-                check('Carburator heat', 'off'),
+                check('Carburetor heat', 'off'),
                 check('Airspeed indication', 'checked')
             ]
         },
@@ -153,7 +213,7 @@ export const pegChecklist: Checklist = {
                 check('Electrical fuel pump', 'on'),
                 check('Engine instruments', 'checked'),
                 check('Mixture', 'as required'),
-                check('Carburator heat', 'checked'),
+                check('Carburetor heat', 'checked'),
                 check('Fuel selector', 'fullest tank'),
                 check('Approach briefing', 'reviewed')
 
@@ -174,7 +234,7 @@ export const pegChecklist: Checklist = {
             name: 'Short final',
             alternate: 'Take-off',
             checks: [
-                check('Carburator heat', 'off')
+                check('Carburetor heat', 'off')
             ]
         },
         {
@@ -182,8 +242,8 @@ export const pegChecklist: Checklist = {
             checks: [
                 check('Electrical fuel pump', 'off'),
                 check('Pitot heat', 'off'),
-                check('Landing light', 'off'),
-                check('Recognition light', 'off'),
+                check('Landing light', 'off', ['day']),
+                check('Recognition light', 'off', ['day']),
                 check('Strobe light', 'fin'),
                 check('Transponder', 'standby'),
                 check('Flaps', 'up')

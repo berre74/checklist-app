@@ -6,20 +6,45 @@
     gap: 15px;
 }
 
-.checklist h1 {
+.header {
+    display: flex;
+}
+
+.header h1 {
     text-align: center;
+    flex: 1
+}
+
+.header button {
+    width: 5ch;
 }
 
 .phase {
-    height: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
     gap: 15px;
 }
 
-.phase h2 {
+.phaseSelection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    gap: 5px;
+}
+
+.phaseSelection button {
+    min-height: 30px;
+    text-align: left;
+    padding: 5px;
+}
+
+.phaseTitleBar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .checks {
@@ -47,4 +72,5 @@
 
 .confirm {
     font-style: italic;
+    padding-right: 2px; /* Because of italic, the font leans outside... So padding to avoid clipping */
 }
