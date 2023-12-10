@@ -2,6 +2,7 @@ import styles from './checklist.module.css'
 import {useState} from "react";
 import {Checklist, FlightCondition, Phase} from "@/app/checklist/checklist-support";
 import {CheckView} from "@/app/checklist/CheckView";
+import { Button } from '@mui/material';
 
 interface ChecklistProps {
     checklist: Checklist
@@ -67,18 +68,18 @@ export const ChecklistViewer = ({checklist}: ChecklistProps) => {
 
     return <div className={styles.checklist}>
         <div className={styles.header}>
-            <button onClick={togglePhaseSelection}>Q</button>
-            <h1>{checklist.name}</h1>
-            <button onClick={toggleCondition}>{condition}</button>
+            <Button onClick={togglePhaseSelection} variant={'text'} size={'small'}>Q</Button>
+            <h3 className={styles.title}>{checklist.name}</h3>
+            <Button onClick={toggleCondition} variant={'text'} size={'small'}>{condition}</Button>
         </div>
         {showPhaseSelection && <div className={styles.phaseSelection}>
-            {phases.map((p, i) => <button key={i} onClick={() => goTo(i)}>{p.name}</button>)}
+            {phases.map((p, i) => <Button key={i} onClick={() => goTo(i)}  >{p.name}</Button>)}
         </div>}
         {!showPhaseSelection &&
             <>
             <div className={styles.phase}>
                 <div className={styles.phaseTitleBar}>
-                    <h2>{currentPhase.name}</h2>
+                    <h3>{currentPhase.name}</h3>
                     <div>{index + 1}/{phases.length}</div>
                 </div>
                 <div className={styles.checks}>
@@ -88,9 +89,9 @@ export const ChecklistViewer = ({checklist}: ChecklistProps) => {
                 </div>
             </div>
                 <div className={styles.navButtons}>
-                    <button onClick={prev} disabled={!hasPrev}>{previousPhase?.name || '-Start-'}</button>
-                    {altPhase && <button onClick={alt}>{altPhase.name}</button>}
-                    <button onClick={next} disabled={!hasNext}>{nextPhase?.name || '-Finish-'}</button>
+                    <Button onClick={prev} disabled={!hasPrev} variant={'contained'}>{previousPhase?.name || '-Start-'}</Button>
+                    {altPhase && <Button onClick={alt} variant={'contained'}>{altPhase.name}</Button>}
+                    <Button onClick={next} disabled={!hasNext} variant={'contained'}>{nextPhase?.name || '-Finish-'}</Button>
                 </div>
             </>
         }
