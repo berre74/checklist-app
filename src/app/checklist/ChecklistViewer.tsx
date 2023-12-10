@@ -72,7 +72,7 @@ export const ChecklistViewer = ({checklist}: ChecklistProps) => {
             <button onClick={toggleCondition}>{condition}</button>
         </div>
         {showPhaseSelection && <div className={styles.phaseSelection}>
-            {phases.map((p, i) => <button onClick={() => goTo(i)}>{p.name}</button>)}
+            {phases.map((p, i) => <button key={i} onClick={() => goTo(i)}>{p.name}</button>)}
         </div>}
         {!showPhaseSelection &&
             <>
