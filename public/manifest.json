@@ -1,0 +1,16 @@
+{
+  "name": "Bert's Checklist",
+  "short_name": "checklist",
+  "icons": [
+    {
+      "src": "/checklist.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}

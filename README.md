@@ -22,3 +22,8 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Attribution
+
+- Icon / Favicon : <a href="https://www.freepik.com/search?format=search&last_filter=type&last_value=icon&query=checklist&type=icon">Icon by apien</a>
+ 
