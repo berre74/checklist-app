@@ -6,6 +6,7 @@ import {Button, IconButton} from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import ModeNightIcon from '@mui/icons-material/ModeNight'
+import {useColorMode} from "@/app/ColorModeProvider";
 
 interface ChecklistProps {
     checklist: Checklist
@@ -17,6 +18,7 @@ export const ChecklistViewer = ({checklist}: ChecklistProps) => {
     const [index, setIndex] = useState(0)
     const [condition, setCondition] = useState<FlightCondition>('day')
     const [showPhaseSelection, setShowPhaseSelection] = useState(false)
+    const colorMode = useColorMode()
 
     const hasPrev = index > 0
     const hasNext = index < phases.length - 1
@@ -74,6 +76,7 @@ export const ChecklistViewer = ({checklist}: ChecklistProps) => {
             <IconButton onClick={togglePhaseSelection} ><MenuIcon /></IconButton>
             <h3 className={styles.title}>{checklist.name}</h3>
             <IconButton onClick={toggleCondition}>{condition === 'day' ? <LightModeIcon /> : <ModeNightIcon />}</IconButton>
+            {colorMode.ToggleButton}
         </div>
         {showPhaseSelection && <div className={styles.phaseSelection}>
             {phases.map((p, i) => <Button key={i} onClick={() => goTo(i)} className={styles.phaseSelectionButton} >{p.name}</Button>)}
