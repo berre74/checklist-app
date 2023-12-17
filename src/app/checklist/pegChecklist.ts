@@ -67,7 +67,7 @@ export const pegChecklist: Checklist = {
                 check('Seats & belts', 'adjusted & locked'),
                 check('Doors', 'closed & locked'),
                 check('ELT switch', 'armed'),
-                check('STBY instrument', 'armed'),
+                check('STBY instruments', 'checked'),
                 check('Electrical switches', 'off'),
                 check('Avionics master switch', 'off'),
                 check('Throttle', 'closed'),
@@ -89,6 +89,7 @@ export const pegChecklist: Checklist = {
             checks: [
                 check('Brakes', 'set'),
                 check('Electrical fuel pump', 'on'),
+                check('Navigation light', 'on', ['night']),
                 check('Fin strobe light', 'on'),
                 check('Throttle', '1 cm open'),
                 check('Primer', 'as required'),
@@ -110,7 +111,6 @@ export const pegChecklist: Checklist = {
                 check('STBY attitude indicator', 'tested'),
                 check('Trim interrupt & overpower', 'checked'),
                 check('Radios and navaids', 'on & set'),
-                check('Navigation light', 'on', ['night']),
                 check('Landing light', 'on', ['night']),
                 check('Recognition lights', 'on', ['night']),
             ]
@@ -146,7 +146,7 @@ export const pegChecklist: Checklist = {
         {
             name: 'Before take-off',
             checks: [
-                check('Engine run-ip', 'performed'),
+                check('Engine run-up', 'performed'),
                 check('Doors & windows', 'locked'),
                 check('Seats & belts', 'locked and tight'),
                 check('Flight controls', 'free and correct'),
@@ -196,6 +196,7 @@ export const pegChecklist: Checklist = {
         },
         {
             name: 'After take-off',
+            alternate: 'Landing',
             checks: [
                 check('Brakes', 'applied'),
                 check('Engine pressures and temperatures', 'in limits'),
@@ -232,7 +233,7 @@ export const pegChecklist: Checklist = {
         },
         {
             name: 'Short final',
-            alternate: 'Take-off',
+            alternate: 'After take-off',
             checks: [
                 check('Carburetor heat', 'off')
             ]
@@ -251,10 +252,11 @@ export const pegChecklist: Checklist = {
         },
         {
             name: 'Shutdown',
+            alternate: 'Before start',
             checks: [
                 check('Avionics master switch', 'off'),
-                check('Throttle', 'closed'),
                 check('Mixture', 'cut off'),
+                check('Throttle', 'closed'),
                 check('Ignition', 'off & key removed'),
                 check('Electrical switches', 'all off'),
                 check('Parking brake', 'as required'),
