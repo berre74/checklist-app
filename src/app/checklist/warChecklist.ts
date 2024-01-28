@@ -1,7 +1,7 @@
 import {check, Checklist} from "@/app/checklist/checklist-support";
 
-export const pegChecklist: Checklist = {
-    name: 'OO-PEG',
+export const warChecklist: Checklist = {
+    name: 'OO-WAR',
     phases: [
         {
             name: 'Preflight - interior',
@@ -66,8 +66,7 @@ export const pegChecklist: Checklist = {
                 check('Documents', 'on-board & checked'),
                 check('Seats & belts', 'adjusted & locked'),
                 check('Doors', 'closed & locked'),
-                check('ELT switch', 'armed'),
-                check('STBY instruments', 'checked'),
+                check('Flight instruments', 'checked & set'),
                 check('Electrical switches', 'off'),
                 check('Avionics master switch', 'off'),
                 check('Throttle', 'closed'),
@@ -78,11 +77,9 @@ export const pegChecklist: Checklist = {
                 check('Fuel selector ', 'lowest tank'),
                 check('Alternate static', 'checked & off'),
                 check('Flaps', 'checked & set'),
-                check('Master switch, alternator & standby alternator', 'on'),
+                check('Master switch & alternator', 'on'),
                 check('Navigation light', 'on', ['night']),
                 check('Annunciator panel', 'tested'),
-                check('Multifunction display', 'set up'),
-                check('Fuel & Engine page', 'set & checked'),
                 check('Headset', 'on & bluetooth linked'),
                 check('SkyDemon', 'Go Flying')
             ]
@@ -92,7 +89,7 @@ export const pegChecklist: Checklist = {
             checks: [
                 check('Brakes', 'set'),
                 check('Electrical fuel pump', 'on'),
-                check('Fin strobe light', 'on'),
+                check('Strobe light', 'on'),
                 check('Throttle', '1 cm open'),
                 check('Primer', 'as required'),
                 check('Propeller area', 'clear'),
@@ -110,9 +107,9 @@ export const pegChecklist: Checklist = {
                 check('Avionics master switch', 'on'),
                 check('Annunciator panel', 'checked'),
                 check('Engine instruments', 'checked'),
-                check('PFD instruments', 'checked & set'),
-                check('STBY attitude indicator', 'tested'),
-                check('Trim interrupt & overpower', 'checked'),
+                check('Attitude indicator', 'aligned'),
+                check('Directional gyro', 'aligned'),
+                check('Electrical vacuum pump', 'tested and off'),
                 check('Radios and navaids', 'on & set'),
                 check('Landing light', 'on', ['night']),
                 check('Recognition lights', 'on', ['night']),
@@ -138,11 +135,9 @@ export const pegChecklist: Checklist = {
                 check('Fuel selector', 'fullest tank'),
                 check('Throttle', '2000 rpm'),
                 check('Engine instruments', 'in limits'),
-                check('Heading indicator', 'aligned'),
+                check('Directional gyro', 'aligned'),
                 check('Ignition', 'checked 175/50'),
                 check('Carburetor heat', 'checked'),
-                check('Throttle', 'full'),
-                check('STBY alternator', 'checked'),
                 check('Throttle', 'idle, then 1000 rpm')
             ]
         },
@@ -153,7 +148,7 @@ export const pegChecklist: Checklist = {
                 check('Doors & windows', 'locked'),
                 check('Seats & belts', 'locked and tight'),
                 check('Flight controls', 'free and correct'),
-                check('PFD, MFD', 'correct'),
+                check('Alternator', 'on'),
                 check('Electrical fuel pump', 'on'),
                 check('Fuel selector', 'fullest tank'),
                 check('Ignition', 'both'),
@@ -182,7 +177,6 @@ export const pegChecklist: Checklist = {
                 check('Approach area', 'clear'),
                 check('Pitot heat', 'as required'),
                 check('Landing light', 'on'),
-                check('Recognition lights', 'on'),
                 check('Strobe lights', 'on'),
                 check('Transponder', 'ALT'),
                 check('Threshold elevation', 'checked'),
@@ -211,7 +205,7 @@ export const pegChecklist: Checklist = {
         {
             name: 'Approach',
             checks: [
-                check('Heading indicator', 'checked'),
+                check('Directional gyro', 'aligned'),
                 check('Altimeters', 'set'),
                 check('Landing light', 'on'),
                 check('Electrical fuel pump', 'on'),
@@ -247,8 +241,6 @@ export const pegChecklist: Checklist = {
                 check('Electrical fuel pump', 'off'),
                 check('Pitot heat', 'off'),
                 check('Landing light', 'off', ['day']),
-                check('Recognition light', 'off', ['day']),
-                check('Strobe light', 'fin'),
                 check('Transponder', 'standby'),
                 check('Flaps', 'up')
             ]

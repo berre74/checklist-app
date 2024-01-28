@@ -10,9 +10,10 @@ import {useColorMode} from "@/app/ColorModeProvider";
 
 interface ChecklistProps {
     checklist: Checklist
+    toggleChecklist?: () => void
 }
 
-export const ChecklistViewer = ({checklist}: ChecklistProps) => {
+export const ChecklistViewer = ({checklist, toggleChecklist = () => {}}: ChecklistProps) => {
     const phases = checklist.phases
 
     const [index, setIndex] = useState(0)
@@ -74,7 +75,7 @@ export const ChecklistViewer = ({checklist}: ChecklistProps) => {
     return <div className={styles.checklist}>
         <div className={styles.header}>
             <IconButton onClick={togglePhaseSelection} ><MenuIcon /></IconButton>
-            <h3 className={styles.title}>{checklist.name}</h3>
+            <h3 className={styles.title} onClick={toggleChecklist}>{checklist.name}</h3>
             <IconButton onClick={toggleCondition}>{condition === 'day' ? <LightModeIcon /> : <ModeNightIcon />}</IconButton>
             {colorMode.ToggleButton}
         </div>
