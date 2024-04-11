@@ -8,6 +8,6 @@ export interface CheckProps {
 export const CheckView = ({check} : CheckProps) => {
     return <div className={styles.check}>
         <div>{check.item}</div>
-        <div className={styles.confirm}>{check.confirm}</div>
+        <div className={styles.confirm}>{check.confirm}   <input type="checkbox" /></div>
     </div>
 }

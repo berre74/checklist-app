@@ -1,5 +1,7 @@
 import styles from './checklist.module.css'
 import {useState} from "react"
+import React from 'react'
+import Select from 'react-select';
 import {Checklist, FlightCondition, Phase} from "@/app/checklist/checklist-support"
 import {CheckView} from "@/app/checklist/CheckView"
 import {Button, IconButton} from '@mui/material'
@@ -14,6 +16,15 @@ interface ChecklistProps {
 }
 
 export const ChecklistViewer = ({checklist, toggleChecklist = () => {}}: ChecklistProps) => {
+
+    const planes = [
+        { value: 0, label: 'OO-PEG', selected: 'selected' }, 
+        { value: 1, label: 'OO-WAR' },
+        { value: 2, label: 'PH-DYX' }
+    ]
+    const [planeIndex, setPlaneIndex] = useState(0)
+
+
     const phases = checklist.phases
 
     const [index, setIndex] = useState(0)
@@ -74,8 +85,20 @@ export const ChecklistViewer = ({checklist, toggleChecklist = () => {}}: Checkli
 
     return <div className={styles.checklist}>
         <div className={styles.header}>
-            <IconButton onClick={togglePhaseSelection} ><MenuIcon /></IconButton>
-            <h3 className={styles.title} onClick={toggleChecklist}>{checklist.name}</h3>
+            <IconButton onClick={togglePhaseSelection} ><MenuIcon />&nbsp;&nbsp;Plane: </IconButton>
+            <h3 className={styles.title}>
+                <div style={{width: '200px'}}>
+                    <Select 
+                        id="planeSelector"
+                        name="planeSelector"
+                        defaultValue={planes.filter(function(plane) {
+                            return plane.value === planeIndex;
+                          })}
+                        onChange={toggleChecklist}                        
+                        options={planes}
+                    />
+                </div>
+            </h3>
             <IconButton onClick={toggleCondition}>{condition === 'day' ? <LightModeIcon /> : <ModeNightIcon />}</IconButton>
             {colorMode.ToggleButton}
         </div>

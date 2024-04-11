@@ -6,15 +6,16 @@ import {CssBaseline} from "@mui/material";
 import {ColorModeProvider} from "@/app/ColorModeProvider";
 import {warChecklist} from "@/app/checklist/warChecklist";
 import {useState} from "react";
+import {dyxChecklist} from "@/app/checklist/dyxChecklist";
 
-const checklists = [pegChecklist, warChecklist]
+const checklists = [pegChecklist, warChecklist, dyxChecklist]
 
 export default function Home() {
     const [checklistIndex, setChecklistIndex] = useState(0);
     const activeChecklist = checklists[checklistIndex];
 
-    const toggleChecklist = () => {
-        setChecklistIndex((checklistIndex + 1) % checklists.length)
+    const toggleChecklist = (selectedPlane) => {
+        setChecklistIndex(selectedPlane.value)
     }
 
     return <>
