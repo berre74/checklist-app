@@ -5,12 +5,14 @@ export interface Check {
     item: string
     confirm: string
     conditions: FlightCondition[]
+    isChecked: boolean
 }
 
-export const check = (item: string, confirm: string, conditions: FlightCondition[] = ['day', 'night']) => ({
+export const check = (item: string, confirm: string, conditions: FlightCondition[] = ['day', 'night'], isChecked?: boolean) => ({
     item,
     confirm,
-    conditions
+    conditions,
+    isChecked
 })
 
 

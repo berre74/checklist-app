@@ -6,83 +6,78 @@ export const dyxChecklist: Checklist = {
         {
             name: 'Preflight - interior',
             checks: [
-                check('POH and documents', 'on board & checked'),
-                check('Online trouble report', 'checked'),
-                check('Fire extinguisher & First aid kit', 'on board'),
-                check('Ignition', 'off & key removed'),
-                check('Master switch', 'on'),
-                check('Annunciator panel', 'checked'),
+                check('Engine master switch', 'off'),
+                check('Avionics master switch', 'off'),
+                check('Controls', 'free'),
+                check('Battery switch', 'on'),
+                check('Flaps', 'checked'),
+                check('Trims', 'checked'),
                 check('Fuel quantity', 'checked'),
-                check('Interior lights', 'checked'),
-                check('All lights', 'on'),
-                check('Pitot heat', 'on'),
-                check('Lights', 'checked'),
-                check('Stall warning', 'checked'),
-                check('Pitot', 'warm'),
-                check('Electrical switches', 'off'),
-                check('Master switch', 'off'),
-                check('Parking brake', 'set'),
-                check('Pitot & static system', 'drained'),
-                check('Flaps', 'down'),
-                check('Trims', 'neutral'),
-                check('Tow bar & chocks', 'removed'),
-                check('Windows', 'clean'),
-                check('Baggage', 'secure'),
-                check('Baggage door', 'closed & locked')
+                check('Fuel temperature', 'checked'),
+                check('Coolant level light', 'off'),
+                check('Strobe light', 'checked operational', ['night']),
+                check('Navigation lights', 'checked operational', ['night']),
+                check('Landing light', 'checked operational', ['night']),
+                check('Taxi light', 'checked operational', ['night']),
+                check('Internal lighting 1', 'checked operational', ['night']),
+                check('Internal lighting 2', 'checked operational', ['night']),
+                check('Day/Night selector switch', 'checked and set', ['night']),
+                check('Emergency torchlight', 'on board', ['night']),
+                check('Battery switch', 'off'),
+                check('Aircraft documents', 'on board'),
+                check('Luggage', 'properly stowed')
             ]
         },
         {
             name: 'Preflight - exterior',
             checks: [
-                check('Wing surface', 'checked free'),
-                check('Flap & aileron + hinges', 'checked'),
-                check('Static wicks', 'checked'),
-                check('Fuel tank', 'checked & secured'),
-                check('Fuel tank sump', 'drained'),
-                check('Fuel vent', 'clear'), // Where is the fuel vent really ?
-                check('Main gear strut', 'checked'),
-                check('Tire', 'checked'),
-                check('Brakes', 'checked'), // How ?
-                check('Fresh air inlet', 'clear'), // Where ?
-                check('Fuel & oil', 'check for leaks'),
-                check('Cowling', 'secure'),
-                check('Windshield', 'clean'),
-                check('Propeller and spinner', 'check'),
+                check('Fuel filler cap', 'in place & secured'),
+                check('Fuel tank vents', 'free'),
+                check('LH Static ', 'clear'),
+                check('Main fuel tank', 'drained & checked'),
+                check('Aux fuel tank', 'drained & checked'),
+                check('Stabilator', 'checked'),
+                check('Rudder', 'checked'),
+                check('RH Static', 'clear'),
+                check('RH Flap & aileron', 'checked'),
+                check('RH navigation lights', 'checked'),
+                check('Stall warner', 'checked'),
+                check('RH landing gear', 'checked'),
+                check('Fuel filter', 'drained & checked'),
+                check('Exhaust pipe', 'rigid'),
+                check('Engine cowl attachments', 'checked'),
+                check('Propeller', 'checked'),
+                check('Propeller hub', 'no play'),
+                check('Spinner', 'checked'),
                 check('Air inlets', 'clear'),
-                check('Alternator belt', 'check tension'), // Really ?
-                check('Oil level', 'checked'),
-                check('Fuel strainer', 'drained & checked'),
-                check('Pitot tube', 'checked'),
-                check('Antennas', 'checked'),
-                check('Empennage', 'clear'), // ?
-                check('Fresh air inlet', 'clear'), // Where ?
-                check('Stabilo & trim tab', 'checked')
+                check('Gear box oil level', 'checked'),
+                check('Nose gear', 'checked'),
+                check('Engine oil', 'checked'),
+                check('Canopy', 'clean'),
+                check('LH landing gear', 'checked'),
+                check('Pitot', 'clean'),
+                check('Lights', 'checked'),
+                check('LH nav lights', 'checked'),
+                check('LH flap & aileron', 'checked')
             ]
         },
         {
             name: 'Before start',
             checks: [
-                check('Flightplan', 'filed', ['night']),
-                check('Documents', 'on-board & checked'),
-                check('Seats & belts', 'adjusted & locked'),
-                check('Doors', 'closed & locked'),
-                check('ELT switch', 'armed'),
-                check('STBY instruments', 'checked'),
-                check('Electrical switches', 'off'),
-                check('Avionics master switch', 'off'),
-                check('Throttle', 'closed'),
-                check('Mixture', 'full rich'),
-                check('Carburetor heat', 'off'),
-                check('Circuit breakers', 'all in'),
-                check('Ignition', 'off & key ready'),
-                check('Fuel selector ', 'lowest tank'),
-                check('Alternate static', 'checked & off'),
-                check('Flaps', 'checked & set'),
-                check('Master switch, alternator & standby alternator', 'on'),
-                check('Navigation light', 'on', ['night']),
-                check('Annunciator panel', 'tested'),
-                check('Multifunction display', 'set up'),
-                check('Fuel & Engine page', 'set & checked'),
+                check('POH', 'CHECK LATEST EDITION and WITHIN REACH'),
+                check('Canopy', 'CLOSED & LOCKED'),
+                check('Parking brake', 'ON'),
+                check('Front seats', 'ADJUSTED & LOCKED'),
+                check('Belts & harnesses', 'ADJUSTED & FASTENED'),
+                check('Flight controls', 'FREE & CORRECT'),
+                check('Battery Master switch', 'ON'),
+                check('CED lights auto test', 'MONITOR'),
+                check('ALTERNATOR CB switch', 'ON'),
+                check('Annunciator panel', 'TEST, SET DAY/NIGHT'),
+                check('Circuit breakers', 'IN'),
+                check('Elevator trim', 'MOVEMENT AND DIRECTION, SET FOR TO'),
+                check('Fuel quantity', 'CHECK SUFFUCIENT FOR FLIGHT'),
+                check('All electrical switches and avionics', ''),
                 check('Headset', 'on & bluetooth linked'),
                 check('SkyDemon', 'Go Flying')
             ]
@@ -90,90 +85,91 @@ export const dyxChecklist: Checklist = {
         {
             name: 'Engine start',
             checks: [
-                check('Brakes', 'set'),
-                check('Electrical fuel pump', 'on'),
-                check('Fin strobe light', 'on'),
-                check('Throttle', '1 cm open'),
-                check('Primer', 'as required'),
-                check('Propeller area', 'clear'),
-                check('Starter', 'engage'),
-                check('Engine rpm', 'adjust to 1000-1200'),
-                check('Oil pressure', 'rising'),
-                check('Alternator output', 'checked'),
+                check('Strobe light (Beacon)', 'ON'),
+                check('Fuel level and temperature', 'CHECK'),
+                check('Fuel selector', 'ON'),
+                check('Alternate induction air', 'CLOSED'),
+                check('Electrical fuel pump', 'ON'),
+                check('Power lever (Thrust)', 'IDLE'),
+                check('Propeller area', 'CLEAR'),
+                check('Engine Master switch', 'ON'),
+                check('FADEC-lights', 'CHECK OFF'),
+                check('Glow control light', 'WAIT UNTIL OFF'),
+                check('Starter', 'ENGAGE '),
+                check('Check', 'OIL TEMP + PRESSURE / IDLE RPM 890'),
+                check('CED warning light', 'ACKNOWLEDGE and CANCEL'),
+                check('ALT light ', 'CHECK OFF'),
+                check('Voltage', 'CHECK 14 Volt'),
+                check('FADEC lights', 'CHECK OFF'),
                 check('SkyDemon', 'Log engine start')
             ]
         },
         {
             name: 'After start',
             checks: [
-                check('Electrical fuel pump', 'off'),
-                check('Avionics master switch', 'on'),
-                check('Annunciator panel', 'checked'),
-                check('Engine instruments', 'checked'),
-                check('PFD instrumentssss', 'checked & set'),
-                check('STBY attitude indicator', 'tested'),
-                check('Trim interrupt & overpower', 'checked'),
-                check('Radios and navaids', 'on & set'),
-                check('Landing light', 'on', ['night']),
-                check('Recognition lights', 'on', ['night']),
+                check('Electrical fuel pump', 'OFF'),
+                check('Avionics master switch', 'ON'),
+                check('COM/NAV', 'ON and SET'),
+                check('Altimeter', 'SET'),
+                check('Standby Attitude Module', 'CHECK'),
+                check('Transponder', 'STBY'),
+                check('Lights', 'ON')
+            ]
+        },
+        {
+            name: 'FADEC BACKUP BATTERY CHECK',
+            checks: [
+                check('Alternator', 'OFF, engine must operate normally'),
+                check('Battery', 'OFF for minimum 10 seconds, engine must operate normally and NO red FADEC lights illuminated'),
+                check('Battery Master switch', 'on'),
+                check('ALTERNATOR CB switch', 'on'),
+                check('Alternator light', 'CHECK OFF'),
+                check('Voltmeter', 'CHECK IN GREEN ZONE')
             ]
         },
         {
             name: 'Taxi',
             checks: [
-                check('Brakes', 'checked'),
-                check('Flight instruments', 'checked')
-
-                // Flight instruments is probably the old
-                // - Pin in
-                // - Ball out
-                // - Horizon stable
-                // - Gyro and compass increasing / decreasing
-                // - ADF tracking
-            ]
-        },
-        {
-            name: 'Engine run-up',
-            checks: [
-                check('Fuel selector', 'fullest tank'),
-                check('Throttle', '2000 rpm'),
-                check('Engine instruments', 'in limits'),
-                check('Heading indicator', 'aligned'),
-                check('Ignition', 'checked 175/50'),
-                check('Carburetor heat', 'checked'),
-                check('Throttle', 'full'),
-                check('STBY alternator', 'checked'),
-                check('Throttle', 'idle, then 1000 rpm')
+                check('Engine Warm-up: All CED LEDs', 'GREEN'),
+                check('Parking brakes', 'off'),
+                check('Brakes', 'test'),
+                check('Flight instr (DG’s, slip/skid, rate of turn)', 'checked'),
+                check('QNH', 'checked')
             ]
         },
         {
             name: 'Before take-off',
             checks: [
-                check('Engine run-up', 'performed'),
-                check('Doors & windows', 'locked'),
-                check('Seats & belts', 'locked and tight'),
-                check('Flight controls', 'free and correct'),
-                check('PFD, MFD', 'correct'),
-                check('Electrical fuel pump', 'on'),
-                check('Fuel selector', 'fullest tank'),
-                check('Ignition', 'both'),
-                check('Mixture', 'full rich'),
-                check('Carburetor heat', 'off'),
-                check('Flaps', 'set'),
-                check('Trims', 'set'),
-                check('Departure briefing', 'reviewed')
-
-                // Departure briefing includes:
-                // Engine failure before take-off -> throttle idle & stop
-                // Engine failure after take-off
-                //   Best glide 73 kts
-                //   No turns below 800 ft
-                //   No turns more than 30 degrees left or right
-                //   Nose in the wind, which is left/right
-                // Normal procedure
-                //   Rotate at 60
-                //   Climb at 70 (until 10000 ft)
-                //   First turn and direction, clearance
+                check('Parking brake', 'SET'),
+                check('Flight controls', 'FREE & CORRECT'),
+                check('Flight & navigation instruments', 'CHECK & SET'),
+                check('Cabin heat', 'SET AS REQUIRED'),
+                check('Fuel valve', 'ON'),
+                check('Fuel quantity', 'VERIFY SUFFICIENT FOR FLIGHT'),
+                check('Elevator Trim CB', 'ON'),
+                check('Elevator Trim control', 'CHECK & SET TO TAKEOFF'),
+                check('FADEC', 'TEST'),
+                check('Power lever FULL FORWARD', 'min 94%, RPM 2240-2300'),
+                check('Power lever', 'IDLE'),
+                check('Engine instruments & voltmeter', 'CHECK'),
+                check('Flaps', 'Full down then to takeoff position'),
+                check('Electrical Fuel pump', 'ON'),
+                check('Radios & avionics', 'ON and SET'),
+                check('Auto Pilot switch', 'OFF'),
+                check('Power Lever friction', 'SET as desired'),
+                check('Brakes', 'RELEASE')
+            ]
+        },
+        { 
+            name: 'FADEC TEST',
+            checks: [
+                check('Power lever', 'IDLE (both FADEC lights OFF)'),
+                check('FADEC test button', 'PRESS & HOLD until test completed'),
+                check('Both FADEC lights', 'ON, RPM increases'),
+                check('FADEC switches automatically to B', 'FADEC B light ON'),
+                check('FADEC switches automatically to A', 'FADEC A light ON'),
+                check('During test, propeller control is activated, RPM decreases momentarily', 'FADAC A-light: OFF, RPM returns to idle and the test is completed'),
+                check('FADEC test button', 'release')
             ]
         },
         {
@@ -192,11 +188,47 @@ export const dyxChecklist: Checklist = {
         {
             name: 'Take-off',
             checks: [
-                check('Engine parameters', 'checked'),
-                check('Carburetor heat', 'off'),
-                check('Airspeed indication', 'checked')
+                check('Power lever', 'FULL FORWARD'),
+                check('Engine RPM', '2300 RPM'),
+                check('Vr - Rotation speed', '61 KIAS'),
+                check('Vx - Initial climb speed', '68 KIAS'),
+                check('Vy - After obstacle clearance', '78 KIAS'),
+                check('Flaps', '1st Notch -> UP'),
+                check('Electrical Fuel pump', 'OFF')
             ]
         },
+        { 
+            name: 'Climb',
+            checks: [
+                check('Normal climb (right foot; flaps up + apply brakes)', 'check'),
+                check('Best rate of climb', '78Kt'),
+                check('Power Lever', 'FULL FORWARD'),
+                check('Foots on the breaks, Positive climb; attitude check, speed check, normal rate of climb', 'check')
+            ]
+        },
+        {
+            name: 'Cruise',
+            checks: [
+                check('Power', 'MAX 100 %, recommended 75 % or less'),
+                check('Fuel pump', 'off'),
+                check('Landing lights', 'off'),
+                check('Trim', 'adjust'),
+                check('CED 125 and annunciator panel', 'MONITOR'),
+                check('Fuel quantity and temperature', 'MONITOR'),
+                check('FADAC warning lights', 'MONITOR')
+            ]
+        },
+        {
+            name: 'Descent',
+            checks: [
+                check('Weather obtained', 'QNH Set'),
+                check('Top Of Decent', 'CHECK'),
+                check('Safe altitude & speed', 'CHECK'),
+                check('Power', 'Adjust as required'),
+                check('Pull cabin heat to keep the coolant warm if power setting is low. If coolant temperature in amber range & engine caution lamp illuminated, increase power to recover GREEN coolant temperature range', 'SET')
+            ]
+        },
+
         {
             name: 'After take-off',
             alternate: 'Landing',
