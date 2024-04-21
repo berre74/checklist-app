@@ -235,7 +235,7 @@ export const dyxChecklist: Checklist = {
             name: 'Approach or Downwind',
             checks: [
                 check('Electrical Fuel pump', 'ON'),
-                chcek('Seats, belts', 'CHECK'),
+                check('Seats, belts', 'CHECK'),
                 check('Flaps', '1st NOTCH Below 92 KIAS'),
                 check('Speed', 'Recommended 81 KIAS'),
                 check('Trim', 'ADJUST'),
@@ -279,7 +279,7 @@ export const dyxChecklist: Checklist = {
                 check('Power lever', 'IDLE (1 minute)'),
                 check('Flaps', 'DOWN'),
                 check('Avionics master switch', 'OFF'),
-                check('Engine master switch', 'OFF')
+                check('Engine master switch', 'OFF'),
                 check('SkyDemon', 'Log engine off'),
                 check('Headset', 'Off')
             ]
