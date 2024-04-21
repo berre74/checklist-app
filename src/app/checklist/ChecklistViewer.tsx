@@ -1,7 +1,7 @@
 import styles from './checklist.module.css'
 import {useState} from "react"
 import React from 'react'
-import Select from 'react-select';
+import Select, { ActionMeta } from 'react-select';
 import {Checklist, FlightCondition, Phase} from "@/app/checklist/checklist-support"
 import {CheckView} from "@/app/checklist/CheckView"
 import {Button, IconButton} from '@mui/material'
@@ -10,14 +10,20 @@ import LightModeIcon from '@mui/icons-material/LightMode'
 import ModeNightIcon from '@mui/icons-material/ModeNight'
 import {useColorMode} from "@/app/ColorModeProvider";
 
+interface PlaneOption {
+    value: number,
+    label: string,
+    selected?: string
+}
 interface ChecklistProps {
     checklist: Checklist
-    toggleChecklist?: () => void
+    checklistIndex: number
+    setChecklistIndex: (newVal: number) => void
 }
 
-export const ChecklistViewer = ({checklist, toggleChecklist = () => {}}: ChecklistProps) => {
+export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex}: ChecklistProps) => {
 
-    const planes = [
+    const planes: PlaneOption[] = [
         { value: 0, label: 'OO-PEG', selected: 'selected' }, 
         { value: 1, label: 'OO-WAR' },
         { value: 2, label: 'PH-DYX' }
@@ -93,8 +99,8 @@ export const ChecklistViewer = ({checklist, toggleChecklist = () => {}}: Checkli
                         name="planeSelector"
                         defaultValue={planes.filter(function(plane) {
                             return plane.value === planeIndex;
-                          })}
-                        onChange={toggleChecklist}                        
+                        })}
+                        onChange={ (selectedPlane: PlaneOption | null, actionMeta: ActionMeta<PlaneOption>) => {setChecklistIndex((selectedPlane?.value || 0))} }                        
                         options={planes}
                     />
                 </div>
@@ -114,7 +120,7 @@ export const ChecklistViewer = ({checklist, toggleChecklist = () => {}}: Checkli
                 </div>
                 <div className={styles.checks}>
                     {currentPhase.checks
-                        .filter(check => check.conditions.includes(condition))
+                        .filter(check => check.conditions?.includes(condition))
                         .map((check, index) => (<CheckView key={index} check={check}/>))}
                 </div>
             </div>

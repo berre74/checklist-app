@@ -4,8 +4,8 @@ export type FlightCondition = (typeof allFlightConditions)[number]
 export interface Check {
     item: string
     confirm: string
-    conditions: FlightCondition[]
-    isChecked: boolean
+    conditions?: FlightCondition[]
+    isChecked?: boolean
 }
 
 export const check = (item: string, confirm: string, conditions: FlightCondition[] = ['day', 'night'], isChecked?: boolean) => ({

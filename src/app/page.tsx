@@ -14,14 +14,10 @@ export default function Home() {
     const [checklistIndex, setChecklistIndex] = useState(0);
     const activeChecklist = checklists[checklistIndex];
 
-    const toggleChecklist = (selectedPlane) => {
-        setChecklistIndex(selectedPlane.value)
-    }
-
     return <>
         <ColorModeProvider>
             <CssBaseline enableColorScheme={true}/>
-            <ChecklistViewer checklist={activeChecklist} toggleChecklist={toggleChecklist}/>
+            <ChecklistViewer checklist={activeChecklist} checklistIndex={checklistIndex} setChecklistIndex={setChecklistIndex}/>
         </ColorModeProvider>
     </>
 }
