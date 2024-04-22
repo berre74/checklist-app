@@ -1,0 +1,19 @@
+{
+    "trailingSlash": "auto",
+    "routes": [
+        {
+            "route": "/*",
+            "allowedRoles": [
+                "authenticated",
+                "anonymous"
+            ]
+        }
+    ],
+    "navigationFallback": {
+        "rewrite": "index.html",
+        "exclude": [
+            "/images/*.{png,jpg,gif}",
+            "/css/*"
+        ]
+    }
+}
