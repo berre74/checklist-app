@@ -31,6 +31,7 @@ jobs:
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
           output_location: "" # Built app content directory - optional
+          app_build_timeout_seconds: 1800
           build_timeout_in_minutes: 30
           ###### End of Repository/Build Configurations ######
 
