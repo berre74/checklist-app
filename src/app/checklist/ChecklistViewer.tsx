@@ -58,11 +58,19 @@ export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex}: 
         setShowPhaseSelection(!showPhaseSelection)
     }
 
+    const [checksCompleted, setChecksCompleted] = useState(0)
+
+    const updateChecksCompleted = () => {
+        setChecksCompleted(currentPhase.checks.filter(check => check.conditions?.includes(condition)).filter(check => check.isChecked).length);
+    }
+
     const toggleCondition = () => {
         if (condition === 'day') {
             setCondition('night')
+            setChecksCompleted(currentPhase.checks.filter(check => check.conditions?.includes('night')).filter(check => check.isChecked).length);
         } else {
             setCondition('day')
+            setChecksCompleted(currentPhase.checks.filter(check => check.conditions?.includes('day')).filter(check => check.isChecked).length);
         }
     }
 
@@ -75,6 +83,7 @@ export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex}: 
         const newIndex = index - 1
         if (newIndex >= 0) {
             setIndex(newIndex)
+            setChecksCompleted(phases[newIndex].checks.filter(check => check.conditions?.includes(condition)).filter(check => check.isChecked).length);
         }
     }
 
@@ -82,6 +91,7 @@ export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex}: 
         const newIndex = index + 1
         if (newIndex < phases.length) {
             setIndex(newIndex)
+            setChecksCompleted(phases[newIndex].checks.filter(check => check.conditions?.includes(condition)).filter(check => check.isChecked).length);
         }
     }
 
@@ -116,12 +126,12 @@ export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex}: 
             <div className={styles.phase}>
                 <div className={styles.phaseTitleBar}>
                     <h3>{currentPhase.name}</h3>
-                    <div>Checklist {index + 1} of {phases.length} - {currentPhase.checks.filter(check => check.isChecked).length} of {currentPhase.checks.length} checks completed</div>
+                    <div>Checklist {index + 1} of {phases.length} - {checksCompleted} of {currentPhase.checks.filter(check => check.conditions?.includes(condition)).length} checks completed</div>
                 </div>
                 <div className={styles.checks}>
                     {currentPhase.checks
                         .filter(check => check.conditions?.includes(condition))
-                        .map((check, index) => (<CheckView key={index} check={check}/>))}
+                        .map((check, index) => (<CheckView key={index} check={check} updateChecksCompleted={updateChecksCompleted} />))}
                 </div>
             </div>
                 <div className={styles.navButtons}>

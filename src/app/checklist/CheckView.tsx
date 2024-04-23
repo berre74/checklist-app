@@ -4,9 +4,10 @@ import {Check} from "@/app/checklist/checklist-support";
 
 export interface CheckProps {
     check: Check
+    updateChecksCompleted: ()=> {}
 }
 
-export const CheckView = ({check} : CheckProps) => {
+export const CheckView = ({check, updateChecksCompleted} : CheckProps) => {
 
     if (!check.isChecked) check.isChecked = false;
     const [isChecked, setIsChecked] = React.useState(check.isChecked);
@@ -15,6 +16,7 @@ export const CheckView = ({check} : CheckProps) => {
         console.log("checkItem " + check.item + " switching to " + !isChecked);
         check.isChecked = !check.isChecked;
         setIsChecked(!isChecked);
+        updateChecksCompleted();
     }
 
     return <div className={styles.check}>
