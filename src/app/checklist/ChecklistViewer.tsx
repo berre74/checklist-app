@@ -116,7 +116,7 @@ export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex}: 
             <div className={styles.phase}>
                 <div className={styles.phaseTitleBar}>
                     <h3>{currentPhase.name}</h3>
-                    <div>{index + 1}/{phases.length}</div>
+                    <div>Checklist {index + 1} of {phases.length} - {currentPhase.checks.filter(check => check.isChecked).length} of {currentPhase.checks.length} checks completed</div>
                 </div>
                 <div className={styles.checks}>
                     {currentPhase.checks
