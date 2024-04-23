@@ -3,6 +3,7 @@
     "routes": [
         {
             "route": "/*",
+            "rewrite": "/",
             "allowedRoles": [
                 "authenticated",
                 "anonymous"
