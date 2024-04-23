@@ -4,7 +4,7 @@ import {Check} from "@/app/checklist/checklist-support";
 
 export interface CheckProps {
     check: Check
-    updateChecksCompleted: ()=> {}
+    updateChecksCompleted: () => void
 }
 
 export const CheckView = ({check, updateChecksCompleted} : CheckProps) => {
