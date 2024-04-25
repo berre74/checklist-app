@@ -4,6 +4,31 @@ export const dyxChecklist: Checklist = {
     name: 'PH-DYX',
     phases: [
         {
+            name: 'Preflight - interior',
+            checks: [
+                check('Engine master switch', 'off'),
+                check('Avionics master switch', 'off'),
+                check('Controls', 'free'),
+                check('Battery switch', 'on'),
+                check('Flaps', 'checked'),
+                check('Trims', 'checked'),
+                check('Fuel quantity', 'checked'),
+                check('Fuel temperature', 'checked'),
+                check('Coolant level light', 'off'),
+                check('Strobe light', 'checked operational', ['night']),
+                check('Navigation lights', 'checked operational', ['night']),
+                check('Landing light', 'checked operational', ['night']),
+                check('Taxi light', 'checked operational', ['night']),
+                check('Internal lighting 1', 'checked operational', ['night']),
+                check('Internal lighting 2', 'checked operational', ['night']),
+                check('Day/Night selector switch', 'checked and set', ['night']),
+                check('Emergency torchlight', 'on board', ['night']),
+                check('Battery switch', 'off'),
+                check('Aircraft documents', 'on board'),
+                check('Luggage', 'properly stowed')
+            ]
+        },
+        {
             name: 'Preflight - exterior',
             checks: [
                 check('Fuel filler cap', 'in place & secured'),
@@ -34,31 +59,6 @@ export const dyxChecklist: Checklist = {
                 check('Lights', 'checked'),
                 check('LH nav lights', 'checked'),
                 check('LH flap & aileron', 'checked')
-            ]
-        },
-        {
-            name: 'Preflight - interior',
-            checks: [
-                check('Engine master switch', 'off'),
-                check('Avionics master switch', 'off'),
-                check('Controls', 'free'),
-                check('Battery switch', 'on'),
-                check('Flaps', 'checked'),
-                check('Trims', 'checked'),
-                check('Fuel quantity', 'checked'),
-                check('Fuel temperature', 'checked'),
-                check('Coolant level light', 'off'),
-                check('Strobe light', 'checked operational', ['night']),
-                check('Navigation lights', 'checked operational', ['night']),
-                check('Landing light', 'checked operational', ['night']),
-                check('Taxi light', 'checked operational', ['night']),
-                check('Internal lighting 1', 'checked operational', ['night']),
-                check('Internal lighting 2', 'checked operational', ['night']),
-                check('Day/Night selector switch', 'checked and set', ['night']),
-                check('Emergency torchlight', 'on board', ['night']),
-                check('Battery switch', 'off'),
-                check('Aircraft documents', 'on board'),
-                check('Luggage', 'properly stowed')
             ]
         },
         {
@@ -273,7 +273,6 @@ export const dyxChecklist: Checklist = {
         },
         {
             name: 'Engine Shutdown',
-            alternate: 'Before start',
             checks: [
                 check('Parking brake', 'SET'),
                 check('Power lever', 'IDLE (1 minute)'),
@@ -286,6 +285,7 @@ export const dyxChecklist: Checklist = {
         },
         {
             name: 'After Engine Stop',
+            alternate: 'Before start',
             checks: [
                 check('Strobe light (Beacon)', 'OFF'),
                 check('Battery switch', 'OFF'),
