@@ -6,6 +6,7 @@ import {Checklist, FlightCondition, Phase} from "@/app/checklist/checklist-suppo
 import {CheckView} from "@/app/checklist/CheckView"
 import {Button, IconButton} from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
+import RefreshIcon from '@mui/icons-material/Refresh'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import ModeNightIcon from '@mui/icons-material/ModeNight'
 import {useColorMode} from "@/app/ColorModeProvider";
@@ -51,6 +52,12 @@ export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex}: 
         altIndex = phases.findIndex(phase => phase.name === currentPhase.alternate)
         if (altIndex > -1) {
             altPhase = phases[altIndex]
+        }
+    }
+
+    const resetChecklists = () => {
+        if(window.confirm('TOTAL RESET:\nAre you shure to RESET all checklists ? \n\nATTENTION:\ninternet connection required !!!!')) {
+            location.reload();
         }
     }
 
@@ -115,6 +122,7 @@ export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex}: 
                     />
                 </div>
             </h3>
+            <IconButton onClick={resetChecklists}><RefreshIcon/></IconButton>
             <IconButton onClick={toggleCondition}>{condition === 'day' ? <LightModeIcon /> : <ModeNightIcon />}</IconButton>
             {colorMode.ToggleButton}
         </div>
