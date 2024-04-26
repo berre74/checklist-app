@@ -149,17 +149,7 @@ export const dyxChecklist: Checklist = {
                 check('Fuel valve', 'ON'),
                 check('Fuel quantity', 'VERIFY SUFFICIENT FOR FLIGHT'),
                 check('Elevator Trim CB', 'ON'),
-                check('Elevator Trim control', 'CHECK & SET TO TAKEOFF'),
-                check('FADEC TEST', 'SEE NEXT PAGE'),
-                check('Power lever FULL FORWARD', 'min 94%, RPM 2240-2300'),
-                check('Power lever', 'IDLE'),
-                check('Engine instruments & voltmeter', 'CHECK'),
-                check('Flaps', 'Full down then to takeoff position'),
-                check('Electrical Fuel pump', 'ON'),
-                check('Radios & avionics', 'ON and SET'),
-                check('Auto Pilot switch', 'OFF'),
-                check('Power Lever friction', 'SET as desired'),
-                check('Brakes', 'RELEASE')
+                check('Power lever', 'IDLE')
             ]
         },
         { 
@@ -177,14 +167,22 @@ export const dyxChecklist: Checklist = {
         {
             name: 'Line-up (FLIPT)',
             checks: [
-                check('Approach area', 'clear'),
-                check('Pitot heat', 'as required'),
-                check('Landing light', 'on'),
-                check('Recognition lights', 'on'),
-                check('Strobe lights', 'on'),
+                check('Flaps', 'Full down then to takeoff position'),
+                check('Landing Lights', 'on'),
+                check('Recognition Lights', 'on'),
+                check('Strobe Lights', 'on'),
+                check('Engine Instruments & voltmeter', 'CHECK'),
+                check('Pitot heat', 'if required'),
+                check('Trims', 'SET TO TAKEOFF'),
                 check('Transponder', 'ALT'),
+                check('Electrical Fuel pump', 'ON'),
+                check('Radios & avionics', 'ON and SET'),
+                check('Auto Pilot switch', 'OFF'),
+                check('Power Lever friction', 'SET as desired'),
                 check('Threshold elevation', 'checked'),
-                check('QFU', 'checked')
+                check('RWY QFU', 'checked'),
+                check('Approach area', 'clear'),
+                check('Brakes', 'RELEASE')
             ]
         },
         {
