@@ -55,6 +55,24 @@ export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex}: 
         }
     }
 
+    const [checkIndex, setCheckIndex] = useState(0)
+    const nextCheck = () => {
+        if(checkIndex < currentPhase.checks.length) {
+            console.log(checkIndex + ' Checked !');
+            currentPhase.checks[checkIndex].isChecked = true;
+            updateChecksCompleted();
+            setCheckIndex(checkIndex+1);
+        }
+    }
+    const skipCheck = () => {
+        if(checkIndex < currentPhase.checks.length) {
+            console.log(checkIndex + ' Skipped !');
+            currentPhase.checks[checkIndex].isChecked = false;
+            updateChecksCompleted();
+            setCheckIndex(checkIndex+1);
+        }
+    }
+
     const resetChecklists = () => {
         if(window.confirm('TOTAL RESET:\nAre you shure to RESET all checklists ? \n\nATTENTION:\ninternet connection required !!!!')) {
             location.reload();
@@ -68,7 +86,7 @@ export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex}: 
     const [checksCompleted, setChecksCompleted] = useState(0)
 
     const updateChecksCompleted = () => {
-        setChecksCompleted(currentPhase.checks.filter(check => check.conditions?.includes(condition)).filter(check => check.isChecked).length);
+        setChecksCompleted(currentPhase.checks.filter(check => check.conditions?.includes(condition)).filter(check => check.isChecked).length);        
     }
 
     const toggleCondition = () => {
@@ -91,6 +109,7 @@ export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex}: 
         if (newIndex >= 0) {
             setIndex(newIndex)
             setChecksCompleted(phases[newIndex].checks.filter(check => check.conditions?.includes(condition)).filter(check => check.isChecked).length);
+            setCheckIndex(0)
         }
     }
 
@@ -99,6 +118,7 @@ export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex}: 
         if (newIndex < phases.length) {
             setIndex(newIndex)
             setChecksCompleted(phases[newIndex].checks.filter(check => check.conditions?.includes(condition)).filter(check => check.isChecked).length);
+            setCheckIndex(0)
         }
     }
 
@@ -139,8 +159,15 @@ export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex}: 
                 <div className={styles.checks}>
                     {currentPhase.checks
                         .filter(check => check.conditions?.includes(condition))
-                        .map((check, index) => (<CheckView key={index} check={check} updateChecksCompleted={updateChecksCompleted} />))}
+                        .map((check, index) => (<CheckView key={index} check={check} updateChecksCompleted={updateChecksCompleted} checkIndex={checkIndex} setCheckIndex={setCheckIndex}/>))}
                 </div>
+            </div>
+            <div className={styles.navButtons}>
+                <Button onClick={skipCheck} disabled={(checkIndex) >= currentPhase.checks.length} variant={'contained'} color={'warning'}>SKIP</Button>
+                <Button onClick={nextCheck} disabled={(checkIndex) >= currentPhase.checks.length} variant={'contained'} color={'success'}>CHECKED</Button>
+            </div>
+            <div>
+                &nbsp;
             </div>
                 <div className={styles.navButtons}>
                     <Button onClick={prev} disabled={!hasPrev} variant={'contained'} color={'secondary'}>{previousPhase?.name || '-Start-'}</Button>

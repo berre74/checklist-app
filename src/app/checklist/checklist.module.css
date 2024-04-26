@@ -62,6 +62,12 @@
     justify-content: space-between;
 }
 
+.checking {
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+}
+
 .confirm {
     font-style: italic;
     padding-right: 2px; /* Because of italic, the font leans outside... So padding to avoid clipping */
