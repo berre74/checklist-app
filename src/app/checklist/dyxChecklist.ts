@@ -65,6 +65,7 @@ export const dyxChecklist: Checklist = {
             name: 'Before start',
             checks: [
                 check('POH', 'CHECK LATEST EDITION and WITHIN REACH'),
+                check('Key', 'INSERTED'),
                 check('Canopy', 'CLOSED & LOCKED'),
                 check('Parking brake', 'ON'),
                 check('Front seats', 'ADJUSTED & LOCKED'),

@@ -1,6 +1,6 @@
 {
   "name": "checklist-app",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "scripts": {
     "dev": "next dev",
@@ -28,6 +28,6 @@
     "typescript": "^5"
   },
   "engines": {
-    "node": "18.17"
+    "node": ">=18.17"
   }
 }

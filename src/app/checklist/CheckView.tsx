@@ -24,6 +24,6 @@ export const CheckView = ({check, updateChecksCompleted, checkIndex, setCheckInd
 
     return <div className={(check.index==checkIndex)?styles.checking:styles.check}>
         <div>{check.item}</div>
-        <div className={styles.confirm}>{check.confirm}   <input type="checkbox" checked={check.isChecked} onChange={checkItem}/></div>
+        <div className={styles.confirm}>{check.confirm}   <input type="checkbox" checked={check.isChecked} onChange={checkItem} className={styles.bigCheck}/>&nbsp;&nbsp;&nbsp;</div>
     </div>
 }

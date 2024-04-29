@@ -20,9 +20,10 @@ interface ChecklistProps {
     checklist: Checklist
     checklistIndex: number
     setChecklistIndex: (newVal: number) => void
+    resetAllChecks: () => void
 }
 
-export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex}: ChecklistProps) => {
+export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex, resetAllChecks}: ChecklistProps) => {
 
     const planes: PlaneOption[] = [
         { value: 0, label: 'OO-PEG', selected: 'selected' }, 
@@ -74,8 +75,9 @@ export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex}: 
     }
 
     const resetChecklists = () => {
-        if(window.confirm('TOTAL RESET:\nAre you shure to RESET all checklists ? \n\nATTENTION:\ninternet connection required !!!!')) {
-            location.reload();
+        if(window.confirm('TOTAL RESET:\nAre you shure to RESET all checklists ?')) {
+            resetAllChecks();
+            setCheckIndex(0);
         }
     }
 

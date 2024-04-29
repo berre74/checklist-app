@@ -68,6 +68,11 @@
     background-color: aqua;
 }
 
+.bigCheck {
+    height: 20px; 
+    width: 20px;
+}
+
 .confirm {
     font-style: italic;
     padding-right: 2px; /* Because of italic, the font leans outside... So padding to avoid clipping */
