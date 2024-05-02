@@ -1,4 +1,4 @@
-import {check, Checklist} from "@/app/checklist/checklist-support";
+import { check, Checklist } from "@/app/checklist/checklist-support";
 
 export const dyxChecklist: Checklist = {
     name: 'PH-DYX',
@@ -133,15 +133,15 @@ export const dyxChecklist: Checklist = {
             name: 'Taxi',
             checks: [
                 check('Engine Warm-up: All CED LEDs', 'GREEN'),
-                check('Parking brakes', 'off'),
-                check('Brakes', 'test'),
-                check('Flight instr (DG’s, slip/skid, rate of turn)', 'checked'),
-                check('QNH', 'checked'),
+                check('Parking brakes', 'OFF'),
+                check('Brakes', 'TEST'),
+                check('Flight instr (DG’s, slip/skid, rate of turn, alt steady)', 'READ'),
+                check('QNH', 'SET'),
                 check('PIC speech', 'FPL, Risks, Engine Failure')
             ]
         },
         {
-            name: 'Before take-off',
+            name: 'Before take-off (Read & Do)',
             checks: [
                 check('Parking brake', 'SET'),
                 check('Flight controls', 'FREE & CORRECT'),
@@ -153,7 +153,7 @@ export const dyxChecklist: Checklist = {
                 check('Power lever', 'IDLE')
             ]
         },
-        { 
+        {
             name: 'FADEC TEST',
             checks: [
                 check('Power lever', 'IDLE (both FADEC lights OFF)'),
@@ -198,7 +198,7 @@ export const dyxChecklist: Checklist = {
                 check('Electrical Fuel pump', 'OFF')
             ]
         },
-        { 
+        {
             name: 'Climb',
             checks: [
                 check('Normal climb (right foot; flaps up + apply brakes)', 'check'),
@@ -218,6 +218,17 @@ export const dyxChecklist: Checklist = {
                 check('CED 125 and annunciator panel', 'MONITOR'),
                 check('Fuel quantity and temperature', 'MONITOR'),
                 check('FADAC warning lights', 'MONITOR')
+            ]
+        },
+        {
+            name: 'THARIF',
+            checks: [
+                check('Timing', 'CHECK'),
+                check('Heading', 'CHECK'),
+                check('Altitude', 'CHECK'),
+                check('Radio', 'PREPARE NEXT'),
+                check('Instruments', 'CHECK'),
+                check('Fuel', 'CHECK')
             ]
         },
         {
@@ -271,7 +282,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Engine Shutdown',
+            name: 'Engine Shutdown (Read & Do)',
             checks: [
                 check('Parking brake', 'SET'),
                 check('Power lever', 'IDLE (1 minute)'),
@@ -295,6 +306,6 @@ export const dyxChecklist: Checklist = {
                 check('Fill in logbook PH-DYX', 'CHECK'),
                 check('Fill in logbook pilot', 'CHECK')
             ]
-        }        
+        }
     ]
 }
