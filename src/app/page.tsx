@@ -1,15 +1,15 @@
 'use client'
-
+import {useState} from "react";
 import {ChecklistViewer} from "@/app/checklist/ChecklistViewer";
 import {pegChecklist} from "@/app/checklist/pegChecklist";
 import {CssBaseline} from "@mui/material";
 import {ColorModeProvider} from "@/app/ColorModeProvider";
 import {warChecklist} from "@/app/checklist/warChecklist";
-import {useState} from "react";
 import {dyxChecklist} from "@/app/checklist/dyxChecklist";
+import {droneChecklist} from "@/app/checklist/droneChecklist";
 import { Checklist, Phase } from "./checklist/checklist-support";
 
-const checklists = [pegChecklist, warChecklist, dyxChecklist]
+const checklists = [pegChecklist, warChecklist, dyxChecklist, droneChecklist]
 // initialize check indexes
 
 const resetAllChecks = () => {
