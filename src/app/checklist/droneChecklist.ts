@@ -4,17 +4,48 @@ export const droneChecklist: Checklist = {
     name: 'DJI-Drone',
     phases: [
         {
-            name: 'Preflight - drone',
+            name: 'Before TO',
             checks: [
-                check('Download maps', 'checked'),
-                check('Propellers', 'checked')
+                check('Download local maps', 'checked'),
+                check('Propellers', 'checked'),
+                check('Gimbal protection', 'off'),
+                check('Wind direction', 'checked'),
+                check('Wind speed', '<20km/h'),
+                check('ID-tag', 'applied'),
+                check('ATC clearance', 'OK'),
+                check('Rain', 'none'),
+                check('RC', 'ON'),
+                check('iPhone WIFI hotspot', 'connected'),
+                check('Drone', 'ON'),
+                check('Battery Drone', 'Sufficient for flight'),
+                check('Battery RC', 'Sufficient for flight'),
+                check('Flight limits (Vertical Heigt + Distance)', 'max'),
+                check('RTH height', 'set'),
+                check('Colison avoidance', 'OFF'),
+                check('Connection lost', 'RTH')
             ]
         },
         {
-            name: 'Before start',
+            name: 'After TO',
             checks: [
-                check('Battery Drone', 'Sufficient for flight'),
-                check('Battery RC', 'Sufficient for flight')
+                check('Colison avoidance', 'ON'),
+                check('RTH Home point', 'updated'),
+                check('Compass on map', 'checked'),
+                check('Record video', 'started')
+            ]
+        },
+        {
+            name: 'Before Landing',
+            checks: [
+                check('Colison avoid', 'OFF'),
+                check('Record video', 'stopped')                
+            ]
+        },
+        {
+            name: 'After Landing',
+            checks: [
+                check('Drone files', 'copied'),
+                check('SD card', 'empty')
             ]
         }
     ]
