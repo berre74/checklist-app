@@ -6,7 +6,6 @@ export const droneChecklist: Checklist = {
         {
             name: 'Before TO',
             checks: [
-                check('Download local maps', 'checked'),
                 check('Propellers', 'checked'),
                 check('Gimbal protection', 'off'),
                 check('Wind direction', 'checked'),
@@ -16,6 +15,7 @@ export const droneChecklist: Checklist = {
                 check('Rain', 'none'),
                 check('RC', 'ON'),
                 check('iPhone WIFI hotspot', 'connected'),
+                check('Local maps', 'downloaded'),
                 check('Drone', 'ON'),
                 check('Battery Drone', 'Sufficient for flight'),
                 check('Battery RC', 'Sufficient for flight'),
@@ -31,6 +31,7 @@ export const droneChecklist: Checklist = {
                 check('Colison avoidance', 'ON'),
                 check('RTH Home point', 'updated'),
                 check('Compass on map', 'checked'),
+                check('Chrono / Countdown', 'started'),
                 check('Record video', 'started')
             ]
         },
