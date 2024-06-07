@@ -23,6 +23,7 @@ export const dyxChecklist: Checklist = {
                 check('Internal lighting 2', 'checked operational', ['night']),
                 check('Day/Night selector switch', 'checked and set', ['night']),
                 check('Emergency torchlight', 'on board', ['night']),
+                check('ELT', 'checked'),
                 check('Battery switch', 'off'),
                 check('Aircraft documents', 'on board'),
                 check('Luggage', 'properly stowed')
@@ -80,6 +81,7 @@ export const dyxChecklist: Checklist = {
                 check('Fuel quantity', 'CHECK SUFFUCIENT FOR FLIGHT'),
                 check('All electrical switches and avionics', 'OFF'),
                 check('Headset', 'on & bluetooth linked'),
+                check('Passenger briefing', 'DONE'),
                 check('SkyDemon', 'Go Flying')
             ]
         },
@@ -245,7 +247,7 @@ export const dyxChecklist: Checklist = {
             name: 'Approach or Downwind',
             checks: [
                 check('Electrical Fuel pump', 'ON'),
-                check('Seats, belts', 'CHECK'),
+                check('Seats belts', 'CHECK'),
                 check('Flaps', '1st NOTCH Below 92 KIAS'),
                 check('Speed', 'Recommended 81 KIAS'),
                 check('Trim', 'ADJUST'),
