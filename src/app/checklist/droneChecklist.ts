@@ -19,8 +19,9 @@ export const droneChecklist: Checklist = {
                 check('Drone', 'ON'),
                 check('Battery Drone', 'Sufficient for flight'),
                 check('Battery RC', 'Sufficient for flight'),
-                check('Flight limits (Vertical Heigt + Distance)', 'max'),
-                check('RTH height', 'set'),
+                check('Vertical Flight Limit', '120m AGL'),
+                check('Distance Flight Mimit', 'max'),
+                check('RTH height', '120m AGL'),
                 check('Colison avoidance', 'OFF'),
                 check('Connection lost', 'RTH')
             ]
@@ -32,14 +33,16 @@ export const droneChecklist: Checklist = {
                 check('RTH Home point', 'updated'),
                 check('Compass on map', 'checked'),
                 check('Chrono / Countdown', 'started'),
+                check('Cine mode', 'ON'),
                 check('Record video', 'started')
             ]
         },
         {
             name: 'Before Landing',
             checks: [
-                check('Colison avoid', 'OFF'),
-                check('Record video', 'stopped')                
+                check('Colison avoidance', 'OFF'),
+                check('Record video', 'stopped'),
+                check('Normal/Sport mode', 'ON')
             ]
         },
         {
