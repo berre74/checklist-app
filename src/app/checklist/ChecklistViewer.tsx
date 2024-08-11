@@ -29,7 +29,8 @@ export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex, r
         { value: 0, label: 'OO-PEG', selected: 'selected' }, 
         { value: 1, label: 'OO-WAR' },
         { value: 2, label: 'PH-DYX' },
-        { value: 3, label: 'DJI-drone' }
+        { value: 3, label: 'DJI-drone' },
+        { value: 4, label: 'Parapente' }
     ]
     const [planeIndex, setPlaneIndex] = useState(0)
 

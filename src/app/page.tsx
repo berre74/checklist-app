@@ -7,9 +7,10 @@ import {ColorModeProvider} from "@/app/ColorModeProvider";
 import {warChecklist} from "@/app/checklist/warChecklist";
 import {dyxChecklist} from "@/app/checklist/dyxChecklist";
 import {droneChecklist} from "@/app/checklist/droneChecklist";
+import {parapenteChecklist} from "@/app/checklist/parapenteChecklist";
 import { Checklist, Phase } from "./checklist/checklist-support";
 
-const checklists = [pegChecklist, warChecklist, dyxChecklist, droneChecklist]
+const checklists = [pegChecklist, warChecklist, dyxChecklist, droneChecklist, parapenteChecklist]
 // initialize check indexes
 
 const resetAllChecks = () => {
