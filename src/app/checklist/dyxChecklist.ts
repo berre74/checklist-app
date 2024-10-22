@@ -82,6 +82,8 @@ export const dyxChecklist: Checklist = {
                 check('All electrical switches and avionics', 'OFF'),
                 check('Headset', 'on & bluetooth linked'),
                 check('Passenger briefing', 'DONE'),
+                check('Aerolync', 'Start new flight'),
+                check('SafeSky', 'Take Off'),
                 check('SkyDemon', 'Go Flying')
             ]
         },
@@ -114,9 +116,11 @@ export const dyxChecklist: Checklist = {
                 check('FADEC BACKUP BATTERY CHECK', 'SEE NEXT PAGE'),
                 check('Avionics master switch', 'ON'),
                 check('COM/NAV', 'ON and SET'),
+                check('Heaset intercom', 'CHECK'),
+                check('ATIS', 'Information *'),
                 check('Altimeter', 'SET'),
                 check('Standby Attitude Module', 'CHECK'),
-                check('Transponder', 'STBY'),
+                check('Transponder', 'STBY/2000'),
                 check('Lights', 'ON')
             ]
         },
@@ -134,10 +138,12 @@ export const dyxChecklist: Checklist = {
         {
             name: 'Taxi',
             checks: [
+                check('Contact Antwerp Ground', 'Goodmoring'),
+                check('@Hangar, Req Taxi for NAV to **** leaving via **** 1500ft', 'Repeat'),
                 check('Engine Warm-up: All CED LEDs', 'GREEN'),
                 check('Parking brakes', 'OFF'),
                 check('Brakes', 'TEST'),
-                check('Flight instr (DG’s, slip/skid, rate of turn, alt steady)', 'READ'),
+                check('Flight instr (DG’s, slip/skid, rate of turn, att steady)', 'READ'),
                 check('QNH', 'SET'),
                 check('PIC speech', 'FPL, Risks, Engine Failure')
             ]
@@ -225,11 +231,11 @@ export const dyxChecklist: Checklist = {
         {
             name: 'THARIF',
             checks: [
-                check('Timing', 'CHECK'),
-                check('Heading', 'CHECK'),
+                check('Timing', 'CHRONO CHECK'),
+                check('Track/Heading', 'CHECK'),
                 check('Altitude', 'CHECK'),
                 check('Radio', 'PREPARE NEXT'),
-                check('Instruments', 'CHECK'),
+                check('Instruments', 'CED + VOLTAGE CHECK'),
                 check('Fuel', 'CHECK')
             ]
         },
@@ -292,6 +298,8 @@ export const dyxChecklist: Checklist = {
                 check('Avionics master switch', 'OFF'),
                 check('Engine master switch', 'OFF'),
                 check('SkyDemon', 'Log engine off'),
+                check('Aerolync', 'Stop flight'),
+                check('SafeSky', 'Stop flight'),
                 check('Headset', 'Off')
             ]
         },
