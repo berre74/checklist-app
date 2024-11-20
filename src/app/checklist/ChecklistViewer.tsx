@@ -151,13 +151,13 @@ export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex, r
             {colorMode.ToggleButton}
         </div>
         {showPhaseSelection && <div className={styles.phaseSelection}>
-            {phases.map((p, i) => <Button key={i} onClick={() => goTo(i)} className={styles.phaseSelectionButton} >{p.name}</Button>)}
+            {phases.map((p, i) => <Button key={i} onClick={() => goTo(i)} className={(p.isEmergency)?styles.phaseEmergencySelectionButton:styles.phaseSelectionButton} >{p.name} {(p.isReadAndDo)?'[Read & Do]':''}</Button>)}
         </div>}
         {!showPhaseSelection &&
             <>
             <div className={styles.phase}>
                 <div className={styles.phaseTitleBar}>
-                    <h3>{currentPhase.name}</h3>
+                    <h3 className={(currentPhase.isEmergency)?styles.phaseEmergencySelectionButton:styles.normal}>{currentPhase.name}</h3>
                     <div>Checklist {index + 1} of {phases.length} - {checksCompleted} of {currentPhase.checks.filter(check => check.conditions?.includes(condition)).length} checks completed</div>
                 </div>
                 <div className={styles.checks}>

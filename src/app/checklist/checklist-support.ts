@@ -20,6 +20,8 @@ export const check = (item: string, confirm: string, conditions: FlightCondition
 export interface Phase {
     name: string
     alternate?: string
+    isReadAndDo?: boolean
+    isEmergency?: boolean
     checks: Check[]
 }
 

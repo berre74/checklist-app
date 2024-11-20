@@ -5,6 +5,7 @@ export const dyxChecklist: Checklist = {
     phases: [
         {
             name: 'Preflight - interior',
+            isReadAndDo: true,
             checks: [
                 check('Engine master switch', 'off'),
                 check('Avionics master switch', 'off'),
@@ -31,6 +32,7 @@ export const dyxChecklist: Checklist = {
         },
         {
             name: 'Preflight - exterior',
+            isReadAndDo: true,
             checks: [
                 check('Fuel filler cap', 'in place & secured'),
                 check('Fuel tank vents', 'free'),
@@ -64,6 +66,7 @@ export const dyxChecklist: Checklist = {
         },
         {
             name: 'Before start',
+            isReadAndDo: true,
             checks: [
                 check('POH', 'CHECK LATEST EDITION and WITHIN REACH'),
                 check('Key', 'INSERTED'),
@@ -89,6 +92,7 @@ export const dyxChecklist: Checklist = {
         },
         {
             name: 'Engine start',
+            isReadAndDo: true,
             checks: [
                 check('Strobe light (Beacon)', 'ON'),
                 check('Fuel level and temperature', 'CHECK'),
@@ -111,6 +115,7 @@ export const dyxChecklist: Checklist = {
         },
         {
             name: 'After Engine Start',
+            isReadAndDo: true,
             checks: [
                 check('Electrical fuel pump', 'OFF'),
                 check('FADEC BACKUP BATTERY CHECK', 'SEE NEXT PAGE'),
@@ -126,6 +131,7 @@ export const dyxChecklist: Checklist = {
         },
         {
             name: 'FADEC BACKUP BATTERY CHECK',
+            isReadAndDo: true,
             checks: [
                 check('Alternator', 'OFF, engine must operate normally'),
                 check('Battery', 'OFF for minimum 10 seconds, engine must operate normally and NO red FADEC lights illuminated'),
@@ -150,6 +156,7 @@ export const dyxChecklist: Checklist = {
         },
         {
             name: 'Before take-off (Read & Do)',
+            isReadAndDo: true,
             checks: [
                 check('Parking brake', 'SET'),
                 check('Flight controls', 'FREE & CORRECT'),
@@ -270,6 +277,7 @@ export const dyxChecklist: Checklist = {
         },
         {
             name: 'Landing OVERSHOOT / GO AROUND',
+            isEmergency: true,
             checks: [
                 check('Pitch attitude', 'TAKEOFF'),
                 check('Power lever', 'FULL POWER'),
@@ -290,7 +298,8 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Engine Shutdown (Read & Do)',
+            name: 'Engine Shutdown',
+            isReadAndDo: true,
             checks: [
                 check('Parking brake', 'SET'),
                 check('Power lever', 'IDLE (1 minute)'),

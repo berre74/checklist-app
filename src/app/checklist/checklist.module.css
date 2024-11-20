@@ -33,6 +33,11 @@
     justify-content: left;
 }
 
+.phaseEmergencySelectionButton {
+    justify-content: left;
+    color: red;
+}
+
 .phaseTitleBar {
     display: flex;
     justify-content: space-between;
