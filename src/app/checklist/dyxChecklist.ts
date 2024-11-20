@@ -4,6 +4,139 @@ export const dyxChecklist: Checklist = {
     name: 'PH-DYX',
     phases: [
         {
+            name: 'ENGINE FAILURE During takeoff roll',
+            isEmergency: true,
+            checks: [
+                check('Thrust Lever', 'IDLE'),
+                check('Apply brakes and hold direction', 'Avoid obstructions'),
+                check('Engine Master switch', 'OFF'),
+                check('Battery and ALT switch', 'OFF'),
+                check('Fuel selector', 'OFF'),
+                check('Emergency ground egress', 'As required')
+            ]
+        },
+        {
+            name: 'ENGINE FAILURE Immediately after takeoff',
+            isEmergency: true,
+            checks: [
+                check('Establish glide', '75-78 KIAS'),
+                check('Land straight ahead', 'Avoid obstructions'),
+                check('FADEC AlB Switch', 'Force B'),
+                check('Battery and ALT switch', 'Check ON'),
+                check('After landing', ''),
+                check('Engine Master switch', 'OFF'),
+                check('Battery and ALT switch', 'OFF'),
+                check('Fuel selector', 'OFF'),
+                check('Wing flaps', 'T/O or Landing recommended'),
+                check('Touch down speed', 'minimum'),
+                check('When aircraft has stopped', 'Emergency ground egress')
+            ]
+        },
+        {
+            name: 'FADEC malfunction',
+            isEmergency: true,
+            checks: [
+                check('FADEC-Test knob', 'at least 2 seconds'),
+                check('POH', 'Page 3-6')
+            ]
+        },
+        {
+            name: 'ENGINE SHUT-DOWN IN FLIGHT',
+            isEmergency: true,
+            checks: [
+                check('Reduce speed', '<100 KIAS'),
+                check('Engine Master switch', 'OFF'),
+                check('Fuel selector', 'OFF'),
+                check('Electric fuel pump', 'OFF'),
+                check('If the propeller has also to be stopped', '<60-65 KIAS, Flaps TO'),
+                check('When the propeller is stopped', 'Glide at 70- 75 KIAS/ Flaps TO')
+            ]
+        },
+        {
+            name: 'ENGINE FAILURE During Flight',
+            isEmergency: true,
+            alternate: 'Landing without engine power',
+            checks: [
+                check('Establish glide ratio 9', '78 KIAS'),
+                check('Fuel selector', 'OPEN'),
+                check('Electric fuel pump', 'ON'),
+                check('FADEC AlB Switch', 'Force B'),
+                check('if no help, FADEC', 'AUTO'),
+                check('If no restart, ENGINE MASTER reset', 'OFF->ON'),
+                check('Battery and ALT switch', 'check ON'),
+                check('Engine and fuel level gauges /alarm panel', 'cause of failure?'),
+                check('FADEC A, B circuit breakers', 'Check ON'),
+                check('If low/no fuel', 'Open aux. tank transfer valve'),
+                check('If propeller/engine not blocked: Starter', 'ON')
+            ]
+        },
+        {
+            name: 'Restart after engine failure',
+            isEmergency: true,
+            checks: [
+                check('Establish glide ratio 9', '78 KIAS'),
+                check('Reliable restart altitude', 'Bellow 13000ft'),
+                check('Battery and ALT switch', 'Check ON'),
+                check('Fuel selector', 'OPEN'),
+                check('Electric fuel pump', 'ON'),
+                check('Power lever', 'IDLE'),
+                check('ENGINE MASTER reset', 'OFF->ON'),
+                check('If propeller/engine not blocked: Starter', 'ON'),
+
+                check('Engine parameters', 'Check'),
+                check('Power lever, once engine runs smoothly at idle', 'Adjust'),
+                check('Engine operation', 'Check available power / engine parameters')
+            ]
+        },
+        {
+            name: 'FIRE on the ground',
+            isEmergency: true,
+            checks: [
+                check('Engine Master switch', 'OFF'),
+                check('Fuel selector', 'OFF'),
+                check('Electric fuel pump', 'OFF'),
+                check('Battery + alternator switch', 'OFF'),
+                check('Emergency ground egress', 'As required'),
+                check('fire extinguisher', 'Extinguish the flames')
+            ]
+        },
+        {
+            name: 'FIRE in flight',
+            isEmergency: true,
+            alternate: 'Landing without engine power',
+            checks: [
+                check('Power lever', 'Reduce'),
+                check('Reduce speed', '<100 KIAS'),
+
+
+                check('Engine Master switch', 'OFF'),
+                check('Fuel selector', 'OFF'),
+                check('Electric fuel pump', 'OFF'),
+
+                check('Battery + alternator switch', 'OFF'),
+                check('Cabin heat', 'OFF'),
+                check('Establish glide ratio 9', '78 KIAS'),
+                check('Cabin ventilation', 'Adjust for lowest smoke in the cabin'),
+                check('fire extinguisher', 'Use as required')
+            ]
+        },
+        {
+            name: 'Landing without engine power',
+            isEmergency: true,
+            checks: [
+                check('Establish glide ratio 9', '78 KIAS'),
+                check('Seat belts and harness', 'Tight'),
+                check('Electric fuel pump', 'ON'),
+                check('Fuel selector', 'OFF'),
+                check('Engine Master switch', 'OFF'),
+                check('Battery and ALT switch', 'OFF'),
+                check('Flaps, when field can easily be reached', 'Full'),
+                check('Speed', 'Minimum'),
+                check('Brakes', 'As required'),
+                check('When aircraft has stopped', 'Emergency ground egress')
+            ]
+        },
+        {
             name: 'Preflight - interior',
             isReadAndDo: true,
             checks: [
