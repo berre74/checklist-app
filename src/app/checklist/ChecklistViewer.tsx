@@ -151,7 +151,7 @@ export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex, r
             {colorMode.ToggleButton}
         </div>
         {showPhaseSelection && <div className={styles.phaseSelection}>
-            {phases.map((p, i) => <Button key={i} onClick={() => goTo(i)} className={(p.isEmergency)?styles.phaseEmergencySelectionButton:styles.phaseSelectionButton} >{p.name} {(p.isReadAndDo)?'[Read & Do]':''}</Button>)}
+            {phases.map((p, i) => <Button key={i} onClick={() => goTo(i)}><div className={(p.isEmergency)?styles.phaseEmergencySelectionButton:styles.phaseSelectionButton}>{p.name} {(p.isReadAndDo)?' [Read & Do]':''}</div></Button>)}
         </div>}
         {!showPhaseSelection &&
             <>
