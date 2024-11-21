@@ -138,7 +138,7 @@ export const dyxChecklist: Checklist = {
         },
         {
             name: 'Preflight - interior',
-            isReadAndDo: true,
+            isReadAndDo: false,
             checks: [
                 check('Engine master switch', 'off'),
                 check('Avionics master switch', 'off'),
@@ -165,7 +165,7 @@ export const dyxChecklist: Checklist = {
         },
         {
             name: 'Preflight - exterior',
-            isReadAndDo: true,
+            isReadAndDo: false,
             checks: [
                 check('Fuel filler cap', 'in place & secured'),
                 check('Fuel tank vents', 'free'),
@@ -248,7 +248,7 @@ export const dyxChecklist: Checklist = {
         },
         {
             name: 'After Engine Start',
-            isReadAndDo: true,
+            isReadAndDo: false,
             checks: [
                 check('Electrical fuel pump', 'OFF'),
                 check('FADEC BACKUP BATTERY CHECK', 'SEE NEXT PAGE'),
@@ -264,7 +264,7 @@ export const dyxChecklist: Checklist = {
         },
         {
             name: 'FADEC BACKUP BATTERY CHECK',
-            isReadAndDo: true,
+            isReadAndDo: false,
             checks: [
                 check('Alternator', 'OFF, engine must operate normally'),
                 check('Battery', 'OFF for minimum 10 seconds, engine must operate normally and NO red FADEC lights illuminated'),
@@ -288,7 +288,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Before take-off (Read & Do)',
+            name: 'Before take-off',
             isReadAndDo: true,
             checks: [
                 check('Parking brake', 'SET'),
