@@ -137,7 +137,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Preflight - interior',
+            name: '1a. Preflight - interior',
             isReadAndDo: false,
             checks: [
                 check('Engine master switch', 'off'),
@@ -164,7 +164,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Preflight - exterior',
+            name: '1b. Preflight - exterior',
             isReadAndDo: false,
             checks: [
                 check('Fuel filler cap', 'in place & secured'),
@@ -198,7 +198,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Before start',
+            name: '2. Before start',
             isReadAndDo: true,
             checks: [
                 check('POH', 'CHECK LATEST EDITION and WITHIN REACH'),
@@ -224,7 +224,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Engine start',
+            name: '3. Engine start',
             isReadAndDo: true,
             checks: [
                 check('Strobe light (Beacon)', 'ON'),
@@ -247,7 +247,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'After Engine Start',
+            name: '4. After Engine Start',
             isReadAndDo: false,
             checks: [
                 check('Electrical fuel pump', 'OFF'),
@@ -263,7 +263,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'FADEC BACKUP BATTERY CHECK',
+            name: '4b. FADEC BACKUP BATTERY CHECK',
             isReadAndDo: false,
             checks: [
                 check('Alternator', 'OFF, engine must operate normally'),
@@ -275,7 +275,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Taxi',
+            name: '5. Taxi',
             checks: [
                 check('Contact Antwerp Ground', 'Goodmoring'),
                 check('@Hangar, Req Taxi for NAV to **** leaving via **** 1500ft', 'Repeat'),
@@ -288,7 +288,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Before take-off',
+            name: '6a. Before take-off',
             isReadAndDo: true,
             checks: [
                 check('Parking brake', 'SET'),
@@ -302,7 +302,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'FADEC TEST',
+            name: '6b. FADEC TEST',
             checks: [
                 check('Power lever', 'IDLE (both FADEC lights OFF)'),
                 check('FADEC test button', 'PRESS & HOLD until test completed'),
@@ -314,7 +314,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Line-up (FLIPT)',
+            name: '7. Line-up (FLIPT)',
             checks: [
                 check('Flaps', 'Full down then to takeoff position'),
                 check('Landing Lights', 'on'),
@@ -335,7 +335,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Take-off',
+            name: '7b. Take-off',
             checks: [
                 check('Power lever', 'FULL FORWARD'),
                 check('Engine RPM', '2300 RPM'),
@@ -347,7 +347,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Climb',
+            name: '8a. Climb',
             checks: [
                 check('Normal climb (right foot; flaps up + apply brakes)', 'check'),
                 check('Best rate of climb', '78Kt'),
@@ -357,7 +357,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Cruise',
+            name: '8b. Cruise',
             checks: [
                 check('Power', 'MAX 100 %, recommended 75 % or less'),
                 check('Fuel pump', 'off'),
@@ -369,7 +369,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'THARIF',
+            name: '8c. THARIF',
             checks: [
                 check('Timing', 'CHRONO CHECK'),
                 check('Track/Heading', 'CHECK'),
@@ -380,7 +380,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Descent',
+            name: '9a. Descent',
             checks: [
                 check('Weather obtained', 'QNH Set'),
                 check('Top Of Decent', 'CHECK'),
@@ -390,7 +390,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Approach or Downwind',
+            name: '9b. Approach or Downwind',
             checks: [
                 check('Electrical Fuel pump', 'ON'),
                 check('Seats belts', 'CHECK'),
@@ -401,7 +401,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Final',
+            name: '9c. Final',
             checks: [
                 check('Flaps', '2nd NOTCH Below 81 KIAS'),
                 check('Approach speed', 'Recommended 70 KIAS'),
@@ -418,7 +418,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'After Landing',
+            name: '10. After Landing',
             checks: [
                 check('Brakes', 'applied'),
                 check('Electrical fuel pump', 'off'),
@@ -431,7 +431,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Engine Shutdown',
+            name: '11. Engine Shutdown',
             isReadAndDo: true,
             checks: [
                 check('Parking brake', 'SET'),
@@ -446,7 +446,7 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'After Engine Stop',
+            name: '12. After Engine Stop',
             alternate: 'Before start',
             checks: [
                 check('Strobe light (Beacon)', 'OFF'),
