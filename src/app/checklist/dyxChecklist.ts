@@ -201,6 +201,7 @@ export const dyxChecklist: Checklist = {
             name: '2. Before start',
             isReadAndDo: true,
             checks: [
+                check('Tow Bar', 'Stowed'),
                 check('POH', 'CHECK LATEST EDITION and WITHIN REACH'),
                 check('Key', 'INSERTED'),
                 check('Canopy', 'CLOSED & LOCKED'),
