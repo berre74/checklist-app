@@ -10,7 +10,7 @@ import {droneChecklist} from "@/app/checklist/droneChecklist";
 import {parapenteChecklist} from "@/app/checklist/parapenteChecklist";
 import { Checklist, Phase } from "./checklist/checklist-support";
 
-const checklists = [pegChecklist, warChecklist, dyxChecklist, droneChecklist, parapenteChecklist]
+const checklists = [dyxChecklist, pegChecklist, warChecklist, droneChecklist, parapenteChecklist]
 // initialize check indexes
 
 const resetAllChecks = () => {

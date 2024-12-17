@@ -26,9 +26,9 @@ interface ChecklistProps {
 export const ChecklistViewer = ({checklist, checklistIndex, setChecklistIndex, resetAllChecks}: ChecklistProps) => {
 
     const planes: PlaneOption[] = [
-        { value: 0, label: 'OO-PEG', selected: 'selected' }, 
-        { value: 1, label: 'OO-WAR' },
-        { value: 2, label: 'PH-DYX' },
+        { value: 0, label: 'PH-DYX', selected: 'selected'  },
+        { value: 1, label: 'OO-PEG'}, 
+        { value: 2, label: 'OO-WAR' },
         { value: 3, label: 'DJI-drone' },
         { value: 4, label: 'Parapente' }
     ]
