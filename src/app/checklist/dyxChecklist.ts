@@ -244,6 +244,7 @@ export const dyxChecklist: Checklist = {
                 check('ALT light ', 'CHECK OFF'),
                 check('Voltage', 'CHECK 14 Volt'),
                 check('FADEC lights', 'CHECK OFF'),
+                check('Flaps', '10° TAKEOFF POSITION'),
                 check('SkyDemon', 'Log engine start')
             ]
         },
@@ -272,7 +273,8 @@ export const dyxChecklist: Checklist = {
                 check('Battery Master switch', 'on'),
                 check('ALTERNATOR CB switch', 'on'),
                 check('Alternator light', 'CHECK OFF'),
-                check('Voltmeter', 'CHECK IN GREEN ZONE')
+                check('Voltmeter', 'CHECK IN GREEN ZONE'),
+                check('CED warning light', 'ACKNOWLEDGE and CANCEL')
             ]
         },
         {
