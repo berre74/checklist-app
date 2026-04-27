@@ -260,6 +260,8 @@ export const dyxChecklist: Checklist = {
                 check('ATIS', 'Information *'),
                 check('Altimeter', 'SET'),
                 check('Standby Attitude Module', 'CHECK'),
+                check('Fuel settings in GARMIN', 'UPDATED'),
+                check('Radio 121.500', 'LISTENING'),
                 check('Transponder', 'STBY/2000'),
                 check('Lights', 'ON')
             ]
