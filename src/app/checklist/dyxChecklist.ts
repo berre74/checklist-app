@@ -55,7 +55,7 @@ export const dyxChecklist: Checklist = {
         {
             name: 'ENGINE FAILURE During Flight',
             isEmergency: true,
-            alternate: 'Landing without engine power',
+            alternate: 'Forced Landing w/o engine',
             checks: [
                 check('Establish glide ratio 9', '78 KIAS'),
                 check('Fuel selector', 'OPEN'),
@@ -103,7 +103,7 @@ export const dyxChecklist: Checklist = {
         {
             name: 'FIRE in flight',
             isEmergency: true,
-            alternate: 'Landing without engine power',
+            alternate: 'Forced Landing w/o engine',
             checks: [
                 check('Power lever', 'Reduce'),
                 check('Reduce speed', '<100 KIAS'),
@@ -121,12 +121,18 @@ export const dyxChecklist: Checklist = {
             ]
         },
         {
-            name: 'Landing without engine power',
+            name: 'Forced Landing w/o engine',
             isEmergency: true,
             checks: [
+                check('Convert excess speed to height', '78 KIAS'),
                 check('Establish glide ratio 9', '78 KIAS'),
+                check('Select suitable landing area', 'WOS'),
+                check('Select High Key / Low Key points agl', '2500ft/1500ft'),
+                check('POH - Restart after engine failure', 'CheckList'),
+                check('Mayday - PHDYX/Pos/Height/Heading/Intention', '121.500'),
+                check('Transponder', '7700'),
                 check('Seat belts and harness', 'Tight'),
-                check('Electric fuel pump', 'ON'),
+                check('Electric fuel pump', 'OFF'),
                 check('Fuel selector', 'OFF'),
                 check('Engine Master switch', 'OFF'),
                 check('Battery and ALT switch', 'OFF'),
