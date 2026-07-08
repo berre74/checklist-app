@@ -143,9 +143,9 @@ export const dyxChecklist: Checklist = {
                 check('Electric fuel pump', 'OFF'),
                 check('Fuel selector', 'OFF'),
                 check('Engine Master switch', 'OFF'),
-                check('Battery and ALT switch', 'OFF'),
                 check('Flaps, when field can easily be reached', 'Full'),
-                check('Speed', 'Minimum'),
+                check('Battery and ALT switch', 'OFF'),
+                check('Touch down', 'Minimum speed'),
                 check('Brakes', 'As required'),
                 check('When aircraft has stopped', 'Emergency ground egress')
             ]
@@ -216,6 +216,8 @@ export const dyxChecklist: Checklist = {
             isReadAndDo: true,
             checks: [
                 check('Tow Bar', 'Stowed'),
+                check('Wheel blocks', 'Removed'),
+                check('Glasses, Map & Lat', 'Ready'),
                 check('POH', 'CHECK LATEST EDITION and WITHIN REACH'),
                 check('Key', 'INSERTED'),
                 check('Canopy', 'CLOSED & LOCKED'),
