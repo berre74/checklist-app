@@ -299,13 +299,14 @@ export const dyxChecklist: Checklist = {
             name: '5. Taxi',
             checks: [
                 check('Contact Antwerp Ground', 'Goodmoring'),
-                check('@Hangar, Req Taxi for NAV to **** leaving via **** 1500ft', 'Repeat'),
+                check('@Hangar, Req Taxi for VFR LOC/NAV FL to **** leaving via **** 1500ft', 'Repeat'),
                 check('Engine Warm-up: All CED LEDs', 'GREEN'),
                 check('Parking brakes', 'OFF'),
                 check('Brakes', 'TEST'),
-                check('Flight instr (DG’s, slip/skid, rate of turn, att steady)', 'READ'),
-                check('QNH', 'SET'),
-                check('PIC speech', 'FPL, Risks, Engine Failure')
+                check('Flight instr (DG’s, slip/skid, rate of turn, att steady, magnetic compass alive)', 'READ'),
+                check('QNH & Flight Plan', 'SET'),
+                check('PIC speech', 'FPL, Risks, Engine Failure'),
+                check('Seatbelts, Air vents, and Windows, Fire Extinguisher, Exit Doors, Traffic & Talking, Your questions', 'SAFETY'),
             ]
         },
         {
